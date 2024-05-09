@@ -79,8 +79,6 @@ header .btn-contato button:hover{
 
 header .interface .logo:hover{
     box-shadow: 0 0 20px #00ff08;
-    transform: scale(1);
-    transition: 1.2s;
     border-radius: 50%;
 }
 
