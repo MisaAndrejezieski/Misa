@@ -78,7 +78,7 @@ header .btn-contato button:hover{
 }
 
 header .interface .logo:hover{
-    box-shadow: 0 0 20px #00ff08;
+    box-shadow: 0 0 20px #fff;
     border-radius: 50%;
 }
 
