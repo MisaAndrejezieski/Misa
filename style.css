@@ -236,7 +236,7 @@ section.portifólio .flex{
     background-position: 100% 0%;
     transition: 8s;
     cursor: pointer;
-    border-radius: 18%;
+    border-radius: 10%;
     margin-top: 40px;
 }
 
