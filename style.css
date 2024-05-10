@@ -225,7 +225,7 @@ section.portifólio{
 }
 
 section.portifólio .flex{
-    gap: 80px;
+    justify-content: space-around;
 }
 
 .img-port{
@@ -233,4 +233,5 @@ section.portifólio .flex{
     height: 460px;
     background-color: #00ff08;
 }
+
 
