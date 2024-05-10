@@ -206,8 +206,9 @@ section.sobre .flex{
 }
 
 .sobre .txt-sobre .btn-social button{
-    width: 60px;
-    height: 60px;
+    display: flexbox;
+    width: 30px;
+    height: 30px;
     border-radius: 30px;
     border: 0;
     background-color: #00ff08;
