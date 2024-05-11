@@ -262,7 +262,7 @@ form {
 }
 
 form input,
-form textarea {
+form text {
     width: 100%;
     background-color: #313030cc;
     border: 0;
@@ -277,7 +277,7 @@ form input::placeholder {
     color: #00ff08;
 }
 
-form textarea {
+form text {
     resize: none;
     max-height: 200px;
     margin-top: 40px;
@@ -382,5 +382,13 @@ footer .line-footer p a {
         font-size: 34px;
         line-height: 35px;
         text-align: center;
+    }
+
+    .btn-social{
+        text-align: center;
+    }
+
+    .img-sobre img{
+        width: 100%;
     }
 }
