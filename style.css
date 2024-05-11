@@ -273,11 +273,8 @@ form textarea {
     font-size: 20px;
 }
 
-form text{
-    
-}
-
-form input::placeholder {
+form input::placeholder,
+form textarea {
     color: #00ff08;
 }
 
@@ -292,7 +289,7 @@ form .btn-enviar {
     text-align: center;
 }
 
-form .btn-enviar input[type= submit] {
+form .btn-enviar input[type=submit] {
     width: 120px;
     background-color: #00ff08;
     color: #000;
@@ -340,7 +337,7 @@ footer .line-footer p a {
         flex-direction: column;
     }
 
-    h2.titulo{
+    h2.titulo {
         font-size: 34px;
         line-height: 30px;
     }
@@ -378,21 +375,21 @@ footer .line-footer p a {
     }
 
     /* Sobre */
-    section.sobre{
+    section.sobre {
         padding: 80PX 8%;
     }
 
-    .sobre .txt-sobre h2{
+    .sobre .txt-sobre h2 {
         font-size: 34px;
         line-height: 35px;
         text-align: center;
     }
 
-    .btn-social{
+    .btn-social {
         text-align: center;
     }
 
-    .img-sobre img{
+    .img-sobre img {
         width: 100%;
     }
 }
