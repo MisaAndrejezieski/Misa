@@ -408,4 +408,13 @@ footer .line-footer p a {
         margin: 0 auto;
     }
 
+    /* RODAPÉ */
+    footer .flex{
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    footer .line-footer{
+        text-align: center;
+    }
 }
