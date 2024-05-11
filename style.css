@@ -146,11 +146,29 @@ section.topo-do-site .flex {
     background-color: #00000070;
     backdrop-filter: blur(10px);
     position: absolute;
-    top: 0;
+    top: 77px;
     left: 0;
     width: 100%;
-    height: 100vh;
-    display: none;
+    height: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.menu-mobile nav a{
+    color: #fff;
+    text-align: none;
+    display: block;
+    padding: 20px 30px;
+    font-size: 16px;
+}
+
+.menu-mobile nav a:hover{
+    color: #ffffff33;
+    text-align: none;
+    display: block;
+    padding: 20px 30px;
+    font-size: 16px;   
 }
 
 
@@ -342,6 +360,11 @@ footer .line-footer p a {
 }
 
 @media screen and (max-width: 1020px) {
+
+    .menu-mobile.abrir{
+        visibility: visible;
+        height: calc(100vh-77px);
+    }
 
     /* classes gerais */
     .flex {
