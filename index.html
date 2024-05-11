@@ -1,269 +1,192 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- FIM GOOGLE FONTES -->
+    <!-- BOOTSTRAP ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- FIM BOOTSTRAP ICONS -->
+    <link rel="stylesheet" href="style.css">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- GOOGLE FONTS -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
-        <!-- FIM GOOGLE FONTS -->
-        <!-- BOOTSTRAP-ICONS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-        <!-- FIM BOOTSTRAP-ICONS -->
-        <link rel="stylesheet" href="style.css">
+    <script src="menu.js" defer></script>
 
-        <title>Misa</title>
-    </head><!-- fim do head -->
+    <title>Agência BRN</title>
+</head>
+<body>
+    
+    <header>
+        <div class="interface">
+            <div class="logo">
+                <a href="#">
+                    <img src="images/logo.png" alt="Logo da Agência BRN">
+                </a>
+            </div><!--logo-->
 
-    <body>
-        <header>
+            <nav class="menu-desktop">
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Especialidades</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Projetos</a></li>
+                </ul>
+            </nav>
+
+            <div class="btn-contato">
+                <a href="#">
+                    <button>Contato</button>
+                </a>
+            </div><!--btn-contato-->
+
+            <div class="btn-abrir-menu" id="btn-menu">
+                <i class="bi bi-list"></i>
+            </div>
+
+            <div class="menu-mobile" id="menu-mobile">
+                <div class="btn-fechar">
+                    <i class="bi bi-x-lg"></i>
+                </div>
+
+                <nav>
+                    <ul>
+                        <li><a href="#">Início</a></li>
+                        <li><a href="#">Especialidades</a></li>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Projetos</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </nav>
+
+            </div><!--menu-mobile-->
+            <div class="overlay-menu" id="overlay-menu"></div>
+        </div><!--interface-->
+    </header>
+
+    <main>
+        <section class="topo-do-site">
             <div class="interface">
-                <div class="logo">
-                    <a href="">
-                        <img src="images/logo.png" alt="misa">
-                    </a><!--logo-->
-                </div>
+                <div class="flex">
+                    <div class="txt-topo-site">
+                        <h1>TRANSFORMANDO IDEIAS EM REALIDADE DIGITAL<span>.</span></h1>
+                        <p>Criatividade e inovação andam lado a lado. Com uma combinação única de design impactante, funcionalidade intuitiva e otimização para resultados, estou pronto(a) para criar a presença online dos seus sonhos.</p>
 
-                <nav class="menu-desktop">
-                    <ul>
-                        <li><a href="">Inicio</a></li>
-                        <li><a href="">Espicialidades</a></li>
-                        <li><a href="">Sobre</a></li>
-                        <li><a href="">Projetos</a></li>
-                    </ul>
-                </nav>
-
-                <button onclick="animarMenu()" id="btn-menu">
-                    <span class="linha"></span>
-                    <span class="linha"></span>
-                    <span class="linha"></span>
-                </button>
-
-                <nav class="menu-Mobile" id="menu-Mobile">
-                    <ul>
-                        <li><a href="">Inicio</a></li>
-                        <li><a href="">Espicialidades</a></li>
-                        <li><a href="">Sobre</a></li>
-                        <li><a href="">Projetos</a></li>
-                    </ul>
-                </nav>
-
-                <div class="btn-contato">
-                    <div class="a">
-                        <button>Contato</button>
-                    </div>
-                </div>
-
-            </div> <!--interface-->
-        </header>
-
-        <main>
-            <section class="topo-do-site">
-                <div class="interface">
-                    <div class="flex">
-                        <div class="txt-topo-do-site">
-                            <h1>
-                                Introdução à Programação e Tecnologia<span>.</span>
-                            </h1>
-                            <p>
-                                Olá, seja bem-vindo ao mundo fascinante da programação e tecnologia! Se você é um
-                                iniciante,
-                                não se preocupe, todos nós começamos de algum lugar. Vamos começar com o básico.</p>
-
-                            <p> O que é Programação?</p>
-                            <p>
-                                Programação é o processo de criar um conjunto de instruções que dizem a um computador
-                                como
-                                realizar uma tarefa. Tudo o que você faz no seu computador, desde navegar na internet
-                                até
-                                jogar seus jogos favoritos, é possível graças à programação.
-                            </p>
-                            <p> Linguagens de Programação</p>
-                            <p>
-                                Existem várias linguagens de programação, cada uma com suas próprias características e
-                                usos.
-                                Algumas das linguagens mais populares para iniciantes incluem:
-
-                                - **Python**: Conhecida por sua simplicidade e legibilidade, é uma ótima linguagem para
-                                iniciantes.
-                                - **JavaScript**: Usada principalmente para desenvolvimento web, é a linguagem que faz a
-                                mágica acontecer nos seus sites favoritos.
-                                - **Java**: Uma linguagem versátil usada em muitas aplicações, desde desenvolvimento web
-                                até
-                                aplicativos Android.
-                            </p>
-                            <p> Tecnologia e Sociedade</p>
-                            <p>
-                                A tecnologia desempenha um papel crucial na sociedade moderna. Ela nos permite comunicar
-                                instantaneamente com pessoas do outro lado do mundo, acessar uma riqueza de informações
-                                ao
-                                toque de um botão e muito mais. No entanto, com grandes poderes vêm grandes
-                                responsabilidades. É importante usar a tecnologia de maneira ética e segura.
-                            </p>
-                            </p><!-- txt-topo-do-site -->
-
-                            <div class="btn-contato">
-                                <a href="a">
-                                    <button>
-                                        Entre em contato
-                                    </button>
-                                </a>
-                            </div>
-                        </div><!-- txt-topo-site  -->
-
-                        <div class="img-topo-do-site">
-                            <img src="images/jf001.jpg" alt="Misa">
-                        </div><!-- img-topo-site -->
-                    </div><!-- flex -->
-                </div><!-- interface -->
-            </section><!-- topo-do-site -->
-            <!-- topo-do-site -->
-
-            <section class="especialidades"><!-- especialidades -->
-                <div class="interface">
-                    <h2 class="titulo">
-                        Minhas <span>Especialidades</span>
-                    </h2>
-                    <div class="flex"> <!-- flex -->
-                        <div class="especialidades-box"><!-- especialidades-box 1-->
-                            <i class="bi bi-code-square"></i>
-                            <H3>Website</H3>
-                            <p>
-                                Bem-vindo ao meu portfólio online! Aqui, você encontrará uma coleção cuidadosamente
-                                selecionada dos meus melhores trabalhos, projetos e realizações. Cada peça do meu
-                                portfólio é um reflexo da minha paixão, habilidades e dedicação em minha área de
-                                especialização.
-                            </p>
-                        </div><!-- fim especialidades-box 1 -->
-
-                        <div class="especialidades-box"><!-- especialidades-box 2 -->
-                            <i class="bi bi-diagram-3"></i>
-                            <H3>Portifólio</H3>
-                            <p>
-                                Visite meu site de portfólio hoje mesmo e deixe-se inspirar pela minha visão e
-                                criatividade. Estou ansioso para ter a oportunidade de trabalhar com você no futuro e
-                                trazer suas ideias à vida!
-                            </p><!-- fim paragrafo -->
-                        </div><!-- fim especialidades-box 2 -->
-
-                        <div class="especialidades-box"><!-- especialidades-box 3-->
-                            <i class="bi bi-cart"></i>
-                            <H3>Loja online</H3>
-                            <p>
-                                Bem-vindo ao meu portfólio online! Aqui, você encontrará uma coleção cuidadosamente
-                                selecionada dos meus melhores trabalhos, projetos e realizações. Cada peça do meu
-                                portfólio é um reflexo da minha paixão, habilidades e dedicação em minha área de
-                                especialização.
-                            </p><!-- fim paragrafo -->
-                        </div><!-- fim especialidades-box 3 -->
-
-                    </div> <!-- Fim flex -->
-
-                </div><!-- Fim interface -->
-            </section><!-- Fim Especialidades-->
-
-            <section class="sobre">
-                <div class="interface">
-                    <div class="flex">
-                        <div class="img-sobre">
-                            <img src="images/me.jpg" alt="minha foto">
-                        </div><!-- fim img-sobre -->
-
-                        <div class="txt-sobre">
-                            <h2>
-                                Muito prazer, <span>sou Misael Andrejezieski.</span>
-                            </h2>
-
-                            <p>
-                                Sou programador, formado em analisa e desenvolvimento de sistemas pela Unicesumar.
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, molestias. Soluta non
-                                odio at sed animi eius illum aperiam earum.
-                            </p>
-
-                            <div class="btn-social">
-                                <a href="https://www.instagram.com/misaelandrejezieski/?hl=pt_BR"><button><i
-                                            class="bi bi-instagram"></i></button></a>
-                                <a href="https://www.youtube.com/channel/UCu3YeYjOumKg0Pt5sYDbmVQ"><button>><i
-                                            class="bi bi-youtube"></i></button></a>
-                                <a href="https://sites.google.com/view/misa-misa/home"><button><i
-                                            class="bi bi-google"></i></button></a>
-                            </div>
-
-                        </div><!-- fim txt-sobre -->
-                    </div> <!-- fim flex -->
-                </div><!-- fim interface -->
-            </section><!-- fim sobre -->
-
-            <section class="portifólio">
-                <div class="interface">
-                    <h2 class="titulo">
-                        Meu <span>portifólio</span>.
-                    </h2>
-                    <div class="flex">
-                        <div class="img-port" style="background-image: url(images/Cip-benco.png);">
+                        <div class="btn-contato">
+                            <a href="#">
+                                <button>Entre em contato</button>
+                            </a>
                         </div>
+                    </div><!--txt-topo-site-->
 
-                        <div class="img-port" style="background-image: url(images/GAME\ WEB\ DESIGN.jpg);">
-                        </div>
+                    <div class="img-topo-site">
+                        <img src="images/pessoa.png" alt="">
+                    </div><!--img-topo-site-->
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--topo-do-site-->
 
-                        <div class="img-port" style="background-image: url(images/japan001.jpg);">
-                        </div><!-- fim img-port -->
-                    </div><!-- fim flex -->
-                </div><!--- fim interface -->
-            </section><!-- fim portifólio -->
+        <section class="especiliadades">
+            <div class="interface">
+                <h2 class="titulo">MINHAS <span>ESPECIALIDADES.</span></h2>
+                <div class="flex">
+                    <div class="especialidades-box">
+                        <i class="bi bi-code-square"></i>
+                        <h3>Website</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, nulla rem dolore inventore delectus at.</p>
+                    </div><!--especialidades-box-->
 
-            <section class="form">
-                <div class="interface">
-                    <h2 class="titulo">
-                        Fala <span>comigo</span>.
-                    </h2><!-- fim h2 -->
+                    <div class="especialidades-box">
+                        <i class="bi bi-cart"></i>
+                        <h3>Loja online</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, nulla rem dolore inventore delectus at.</p>
+                    </div><!--especialidades-box-->
 
-                    <form action="">
-                        <input type="text" name="" id="" placeholder=" Seu nome completo:" required>
-                        <input type="text" name="" id="" placeholder=" Seu e-mail:" required>
-                        <input type="text" name="" id="" placeholder=" Seu celular:">
-                        <textarea name="" id="" placeholder="Seu mensagem:" required></textarea>
-                        <div class="btn-enviar"><input type="submit" value="Enviar"></div>
-                    </form>
-                </div><!-- fim interface -->
-            </section><!-- fim formulario -->
-        </main><!-- fim do main -->
+                    <div class="especialidades-box">
+                        <i class="bi bi-wordpress"></i>
+                        <h3>Blog</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, nulla rem dolore inventore delectus at.</p>
+                    </div><!--especialidades-box-->
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--especiliadades-->
 
-        <footer>
-            <div class="interfece">
-                <div class="line-footer">
-                    <div class="flex">
-                        <div class="logo-footer">
-                            <img src="images/logo.png" alt="logo Misa">
-                        </div><!-- FIM DO LOGO DO RODAPE -->
+        <section class="sobre">
+            <div class="interface">
+                <div class="flex">
+                    <div class="img-sobre">
+                        <img src="images/foto.png" alt="">
+                    </div><!--img-sobre-->
 
+                    <div class="txt-sobre">
+                        <h2>MUITO PRAZER, <span>SOU BRUNO RODRIGUES.</span></h2>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At accusantium ducimus dicta suscipit, neque cumque sunt tenetur totam delectus magnam minus ratione. Quidem sequi velit voluptatibus eos omnis ullam officiis.</p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam quidem quae iusto repellendus eaque, ipsum sed voluptate explicabo voluptas, dolorum porro sequi laudantium? Obcaecati quae, dolores illo officiis a numquam.</p>
                         <div class="btn-social">
-                            <a href="https://www.instagram.com/misaelandrejezieski/?hl=pt_BR"><button><i
-                                        class="bi bi-instagram"></i></button></a>
-                            <a href="https://www.youtube.com/channel/UCu3YeYjOumKg0Pt5sYDbmVQ"><button>><i
-                                        class="bi bi-youtube"></i></button></a>
-                            <a href="https://sites.google.com/view/misa-misa/home"><button><i
-                                        class="bi bi-google"></i></button></a>
-                        </div> <!-- fim btn-social -->
+                            <a href="#"><button><i class="bi bi-instagram"></i></button></a>
+                            <a href="#"><button><i class="bi bi-youtube"></i></button></a>
+                            <a href="#"><button><i class="bi bi-linkedin"></i></button></a>
+                        </div><!--btn-social-->
+                    </div><!--txt-sobre-->
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--sobre-->
 
-                    </div><!-- fim do flex do rodapé -->
+        <section class="portfolio">
+            <div class="interface">
+                <h2 class="titulo">MEU <span>PORTFÓLIO.</span></h2>
+                <div class="flex">
+                    <div class="img-port" style="background-image: url(images/imagem.jpg);">
+                        <div class="overlay">Projeto 1</div>
+                    </div>
+                    <div class="img-port" style="background-image: url(images/imagem.jpg);">
+                        <div class="overlay">Projeto 2</div>
+                    </div>
+                    <div class="img-port" style="background-image: url(images/imagem.jpg);">
+                        <div class="overlay">Projeto 3</div>
+                    </div>
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--portfolio-->
 
-                </div><!-- fim do primeiro line-footer -->
-            </div>
-            </div>
-            <div class="line-footer border">
-                <p><i class="bi bi-envelope-at-fill"></i><a
-                        href="mailto: misaelandrejezieski130982@outlook.com">misaelandrejezieski130982@outlook.com</a>
-                </p>
-            </div><!-- fim do segundo line-footer -->
-            </div><!-- fim da inteface -->
-        </footer><!-- fim do footer -->
+        <section class="formulario">
+            <div class="interface">
+                <h2 class="titulo">FALA <span>COMIGO.</span></h2>
 
-        <script src="animar.js"></script>
-    </body>
+                <form action="">
+                    <input type="text" name="" id="" placeholder="Seu nome completo:" required>
+                    <input type="text" name="" id="" placeholder="Seu e-mail:" required>
+                    <input type="text" name="" id="" placeholder="Seu celular:">
+                    <textarea name="" id="" placeholder="Sua mensagem" required></textarea>
+                    <div class="btn-enviar"><input type="submit" value="ENVIAR"></div>
+                </form>
+            </div><!--interface-->
+        </section><!--formulario-->
 
+    </main>
+
+    <footer>
+        <div class="interface">
+            <div class="line-footer">
+                <div class="flex">
+                    <div class="logo-footer">
+                        <img src="images/logo.png" alt="Logotipo Agência BRN">
+                    </div><!--logo-footer-->
+                    <div class="btn-social">
+                        <a href="#"><button><i class="bi bi-instagram"></i></button></a>
+                        <a href="#"><button><i class="bi bi-youtube"></i></button></a>
+                        <a href="#"><button><i class="bi bi-linkedin"></i></button></a>
+                    </div><!--btn-social-->
+                </div>
+            </div><!--line-footer-->
+
+            <div class="line-footer borda">
+                <p><i class="bi bi-envelope-fill"></i> <a href="mailto:contato@bruno.com.br">contato@bruno.com.br</a></p>
+            </div><!--line-footer-->
+        </div><!--interface-->
+    </footer>
+
+</body>
 </html>
