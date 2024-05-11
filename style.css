@@ -397,11 +397,11 @@ footer .line-footer p a {
         display: none;
     }
 
-    .header .logo{
+    header .logo{
         width: 100%;
     }
 
-    .btn-menu{
+    header .btn-menu{
         display: block;
     }
 
