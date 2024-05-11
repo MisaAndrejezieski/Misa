@@ -337,7 +337,20 @@ footer .line-footer p a{
     }
 
     /* cabeçalho */
-    .menu-desktop, .btn-contato{
+    .menu-desktop, .btn-contato{ 
         display: none;
+    }
+
+    /* Topo do site */
+    section.topo-do-site{
+        padding: 20px 8%;
+    }
+
+    .topo-do-site h1{
+        font-size: 30px;
+    }
+
+    .topo-do-site .img-topo-do-site img{
+        width: 100%;
     }
 }
