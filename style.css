@@ -414,4 +414,18 @@ footer .line-footer p a {
     footer .line-footer{
         text-align: center;
     }
+
+    /* Estilo do menu mobile */
+
+    .menu-mobile{
+        background-color: #00000070;
+        backdrop-filter: blur(10px);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        display: none;
+    }
+
 }
