@@ -281,5 +281,13 @@ form textarea{
 
 form .btn-enviar{
     margin-top: 20px;
+    text-align: center;    
+}
 
+form .btn-enviar input[type=submit]{
+    width: 120px;
+    background-color: #00ff08;
+    color: #000;
+    font-weight: 700;
+    cursor: pointer;
 }
