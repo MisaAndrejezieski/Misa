@@ -276,4 +276,5 @@ form input::placeholder{
 
 form textarea{
     resize: none;
+    max-height: 200px;
 }
