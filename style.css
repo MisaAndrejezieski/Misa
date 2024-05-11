@@ -41,7 +41,7 @@ h2.titulo span{
     color: #00ff08;
 }
 
-button:hover{
+button:hover, form .btn-enviar input[type=submit]:hover{
     box-shadow: 0px 0px 8px #01ff09;
     transition: 1.2s;
 }
@@ -277,6 +277,7 @@ form input::placeholder{
 form textarea{
     resize: none;
     max-height: 200px;
+    margin-top: 40px;
 }
 
 form .btn-enviar{
