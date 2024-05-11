@@ -288,7 +288,7 @@ form .btn-enviar {
     text-align: center;
 }
 
-form .btn-enviar input[type=submit] {
+form .btn-enviar input[type= submit] {
     width: 120px;
     background-color: #00ff08;
     color: #000;
