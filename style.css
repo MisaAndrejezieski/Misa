@@ -1,12 +1,9 @@
-/* Estilo geral */
-
-*{
+/* ESTILO GERAL */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Parisienne", cursive;
-    font-weight: 400;
-    font-style: normal;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -25,12 +22,13 @@ body {
 
 .btn-contato button {
     padding: 10px 40px;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 600;
-    background-color: #00ff08;
+    background-color: #00FF08;
     border: 0;
     border-radius: 30px;
     cursor: pointer;
+    transition: .2s;
 }
 
 h2.titulo {
@@ -40,56 +38,117 @@ h2.titulo {
 }
 
 h2.titulo span {
-    color: #00ff08;
+    color: #00FF08;
 }
 
 button:hover,
-form .btn-enviar input[type=submit]:hover {
-    box-shadow: 0px 0px 8px #01ff09;
-    transition: 1.2s;
+form .btn-enviar input:hover {
+    box-shadow: 0px 0px 8px #00ff08;
+    transform: scale(1.05);
 }
 
-/* Estilo do cabeçalho */
-
+/* ESTILO DO CABEÇALHO */
 header {
     padding: 40px 4%;
 }
 
-header .interface {
+header>.interface {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 header a {
-    color: #7d7d7d;
+    color: #5c5c5c;
     text-decoration: none;
-    font-size: 22px;
     display: inline-block;
+    transition: .2s;
 }
 
-header a:hover {
+header nav.menu-desktop a:hover {
     color: #fff;
-    transform: scale(1.4);
-    transition: 1.2s;
-}
-
-header .btn-contato button:hover {
-    box-shadow: 0px 0px 8px #01ff09;
-    transform: scale(1.4);
-    transition: 1.2s;
+    transform: scale(1.05);
 }
 
 header nav ul {
     list-style-type: none;
 }
 
-header nav ul li {
+header nav.menu-desktop ul li {
     display: inline-block;
     padding: 0 40px;
 }
 
-/* Estilo do topo do site */
+/* ESTILO DO MENU MOBILE */
+
+.btn-abrir-menu{
+    display: none;
+}
+
+.btn-abrir-menu i{
+    color: #00FF08;
+    font-size: 40px;
+}
+
+.menu-mobile{
+    background-color: #000;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99999;
+    width: 0%;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.menu-mobile.abrir-menu{
+    width: 70%;
+}
+
+.menu-mobile.abrir-menu ~ .overlay-menu{
+    display: block;
+}
+
+
+.menu-mobile .btn-fechar{
+    padding: 20px 5%;
+}
+
+.menu-mobile .btn-fechar i{
+    color: #00FF08;
+    font-size: 30px;
+}
+
+.menu-mobile nav ul{
+    text-align: right;
+}
+
+.menu-mobile nav ul li a{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 20px 8%;
+    display: block;
+}   
+
+.menu-mobile nav ul li a:hover{
+    background-color: #00FF08;
+    color: #000;
+}
+
+.overlay-menu{
+    background-color: #000000df;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 88888;
+    display: none;
+}
+
+/* ESTILO DO TOPO DO SITE */
 section.topo-do-site {
     padding: 40px 4%;
 }
@@ -102,33 +161,24 @@ section.topo-do-site .flex {
 
 .topo-do-site h1 {
     color: #fff;
-    font-size: 40px;
+    font-size: 42px;
     line-height: 40px;
-    margin: 40px 4%;
 }
 
-.topo-do-site .txt-topo-do-site h1 span {
-    padding: 10px;
-    color: #00ff08;
-    font-size: 60px;
+.topo-do-site .txt-topo-site h1 span {
+    color: #00FF08;
 }
 
-.topo-do-site .txt-topo-do-site h1 span:hover {
-    cursor: pointer;
-}
-
-.topo-do-site .txt-topo-do-site p {
+.topo-do-site .txt-topo-site p {
     color: #fff;
-    font-size: 20px;
-    line-height: 20px;
-    margin: 40px 4%;
-
+    margin: 40px 0;
 }
 
-.topo-do-site .img-topo-do-site img {
+.topo-do-site .img-topo-site img {
     position: relative;
     animation: flutuar 2s ease-in-out infinite alternate;
 }
+
 
 @keyframes flutuar {
     0% {
@@ -140,84 +190,39 @@ section.topo-do-site .flex {
     }
 }
 
- /* Estilo do menu mobile */
-
- .menu-mobile{
-    background-color: #00000070;
-    backdrop-filter: blur(10px);
-    position: absolute;
-    top: 77px;
-    left: 0;
-    width: 100%;
-    height: 0;
-    visibility: hidden;
-    transition: 0.5s;
-    overflow: hidden;
-}
-
-.menu-mobile nav a{
-    color: #fff;
-    text-align: none;
-    display: block;
-    padding: 20px 30px;
-    font-size: 16px;
-}
-
-.menu-mobile nav a:hover{
-    color: #ffffff33;
-    text-align: none;
-    display: block;
-    padding: 20px 30px;
-    font-size: 16px;   
-}
-
-.btn-menu{
-    background-color: transparent;
-    width: 50px;
-    height: 50px;
-    outline: none;
-    cursor:pointer;
-    border: 2px solid #fff;
-    transition: .2s;
-    display: none;
-}
-
-
-/* Estilo da especialidades */
-
-section.especialidades {
+/* ESTILO DAS ESPECIALIDADES */
+section.especiliadades {
     padding: 40px 4%;
 }
 
-section .especialidades .flex {
+section.especiliadades .flex {
     gap: 60px;
 }
 
-.especialidades .especialidades-box {
+.especiliadades .especialidades-box {
     color: #fff;
     padding: 40px;
     border-radius: 20px;
     margin-top: 45px;
-    transition: 1.2s;
+    transition: .2s;
 }
 
-.especialidades .especialidades-box:hover {
+.especiliadades .especialidades-box:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 20px #fff;
+    box-shadow: 0 0 20px #ffffff78;
 }
 
-.especialidades .especialidades-box i {
+.especiliadades .especialidades-box i {
     font-size: 70px;
-    color: #00ff08;
+    color: #00FF08;
 }
 
-.especialidades .especialidades-box h3 {
+.especiliadades .especialidades-box h3 {
     font-size: 28px;
     margin: 15px 0;
 }
 
-/* Estilo do sobre */
-
+/* ESTILO DO SOBRE */
 section.sobre {
     padding: 80px 4%;
 }
@@ -238,7 +243,7 @@ section.sobre .flex {
 }
 
 .sobre .txt-sobre h2 span {
-    color: #00ff08;
+    color: #00FF08;
     display: block;
 }
 
@@ -250,45 +255,65 @@ section.sobre .flex {
 .btn-social button {
     width: 60px;
     height: 60px;
-    border-radius: 30px;
-    border: 2px;
-    background-color: #00ff08;
-    font-size: 25px;
+    border-radius: 50%;
+    border: none;
+    background-color: #00FF08;
+    font-size: 22px;
     cursor: pointer;
-    margin: 0 10px;
+    margin: 0 5px;
     transition: .2s;
 }
 
-/* Estilo portifólio */
-
-section.portifólio {
+/* ESTILO DO PORTFÓLIO */
+section.portfolio {
     padding: 80px 4%;
-    box-shadow: 0 0 20px 10px #ffffff65;
+    box-shadow: 0 0 40px 10px #ffffff1d;
 }
 
-section.portifólio .flex {
+section.portfolio .flex {
     justify-content: space-around;
+    margin-top: 60px;
 }
 
 .img-port {
     width: 360px;
-    height: 520px;
-    background-color: #00ff08;
+    height: 460px;
     background-size: cover;
     background-position: 100% 0%;
     transition: 8s;
     cursor: pointer;
-    border-radius: 10%;
-    margin-top: 40px;
+    border-radius: 40px;
+    position: relative;
 }
 
 .img-port:hover {
     background-position: 100% 100%;
 }
 
-/* Estilo do formulário */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000b8;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    opacity: 0;
+    transition: .5s;
+}
 
-section.form {
+.overlay:hover {
+    opacity: 1;
+}
+
+/* ESTILO DO FORMULÁRIO DE CONTATO */
+section.formulario {
     padding: 80px 4%;
 }
 
@@ -299,29 +324,24 @@ form {
     justify-content: center;
     flex-direction: column;
     gap: 10px;
+    margin-top: 40px;
 }
 
 form input,
 form textarea {
     width: 100%;
-    background-color: #313030cc;
+    background-color: #242424;
     border: 0;
     outline: 0;
-    padding: 20px 40px;
+    padding: 20px 15px;
     border-radius: 15px;
     color: #fff;
-    font-size: 20px;
-}
-
-form input::placeholder,
-form textarea::placeholder {
-    color: #00ff08;
+    font-size: 18px;
 }
 
 form textarea {
     resize: none;
     max-height: 200px;
-    margin-top: 40px;
 }
 
 form .btn-enviar {
@@ -329,20 +349,20 @@ form .btn-enviar {
     text-align: center;
 }
 
-form .btn-enviar input[type=submit] {
+form .btn-enviar input {
     width: 120px;
-    background-color: #00ff08;
+    background-color: #00FF08;
     color: #000;
     font-weight: 700;
     cursor: pointer;
     transition: .2s;
 }
 
-/* Estilo do rodapé */
+/* ESTILO DO RODAPÉ */
 
 footer {
     padding: 40px 4%;
-    box-shadow: 0 0 20px 10px #ffffff65;
+    box-shadow: 0 0 40px 10px #ffffff1d;
 }
 
 footer .flex {
@@ -351,35 +371,30 @@ footer .flex {
 
 footer .line-footer {
     padding: 20px 0;
-    border-bottom: 2px solid #00ff08;
 }
 
-/* -- linha sozinha --ddd
-.border{
-    border-top: 2px solid #00ff08;
+.borda {
+    border-top: 2px solid #00FF08;
 }
-*/
 
 footer .line-footer p i {
-    color: #00ff08;
+    color: #00FF08;
     font-size: 22px;
 }
 
 footer .line-footer p a {
     color: #fff;
-    margin-left: 10px;
 }
 
 @media screen and (max-width: 1020px) {
 
-    .menu-mobile.abrir{
-        visibility: visible;
-        height: calc(100vh-77px);
-    }
-
-    /* classes gerais */
+    /* CLASSES GERAIS */
     .flex {
         flex-direction: column;
+    }
+
+    .topo-do-site .flex{
+        flex-direction: column-reverse;
     }
 
     h2.titulo {
@@ -387,25 +402,14 @@ footer .line-footer p a {
         line-height: 30px;
     }
 
-    .topo-do-site .flex {
-        flex-direction: column-reverse;
-    }
-
-    /* cabeçalho */
+    /* CABEÇALHO */
     .menu-desktop,
     .btn-contato {
         display: none;
     }
 
-    header .logo{
-        width: 100%;
-    }
+    /* TOPO DO SITE */
 
-    header .btn-menu{
-        display: block;
-    }
-
-    /* Topo do site */
     section.topo-do-site .flex {
         gap: 40px;
     }
@@ -418,18 +422,18 @@ footer .line-footer p a {
         font-size: 30px;
     }
 
-    .topo-do-site .img-topo-do-site img {
+    .topo-do-site .img-topo-site img {
         width: 100%;
     }
 
-    /* Minha especialidades */
-    section .especialidades {
+    /* ESPECIALIDADES */
+    section.especiliadades {
         padding: 40px 8%;
     }
 
-    /* Sobre */
+    /* SOBRE */
     section.sobre {
-        padding: 80PX 8%;
+        padding: 80px 8%;
     }
 
     .sobre .txt-sobre h2 {
@@ -437,22 +441,18 @@ footer .line-footer p a {
         line-height: 35px;
         text-align: center;
     }
-
-    .btn-social {
+    
+    .btn-social{
         text-align: center;
     }
 
-    .img-sobre img {
+    .img-sobre img{
         width: 100%;
     }
 
-    /* portifolio */
-    section.portifolio{
+    /* PORTFÓLIO */
+    section.portfolio {
         padding: 80px 8%;
-    }
-
-    section.portifolio .flex{
-        gap: 60px;
     }
 
     .img-port {
@@ -460,15 +460,18 @@ footer .line-footer p a {
         max-width: 360px;
         margin: 0 auto;
     }
+    
+    section.portfolio .flex {
+       gap: 60px;
+    }
 
     /* RODAPÉ */
-    footer .flex{
+    footer .flex {
         flex-direction: column;
         gap: 30px;
     }
 
-    footer .line-footer{
+    footer .line-footer {
         text-align: center;
     }
-
 }
