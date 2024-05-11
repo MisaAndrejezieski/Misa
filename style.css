@@ -171,6 +171,17 @@ section.topo-do-site .flex {
     font-size: 16px;   
 }
 
+.btn-menu{
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    outline: none;
+    cursor:pointer;
+    border: 2px solid #fff;
+    transition: .2s;
+    display: none;
+}
+
 
 /* Estilo da especialidades */
 
@@ -388,6 +399,10 @@ footer .line-footer p a {
 
     .header .logo{
         width: 100%;
+    }
+
+    .btn-menu{
+        display: block;
     }
 
     /* Topo do site */
