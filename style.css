@@ -259,7 +259,7 @@ form{
     gap: 10px;
 }
 
-form input{
+form input, form textarea{
     width: 100%;
     background-color: #313030cc;
     border: 0;
