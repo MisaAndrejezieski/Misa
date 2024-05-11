@@ -53,7 +53,7 @@ header {
     padding: 40px 4%;
 }
 
-header>.interface {
+header.interface {
     display: flex;
     align-items: center;
     justify-content: space-between;
