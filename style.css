@@ -310,15 +310,16 @@ footer .line-footer{
     border-bottom: 2px solid #00ff08;
 }
 
+/* -- linha sozinha --
 .border{
     border-top: 2px solid #00ff08;
 }
+*/
 
-/* linha sozinha */
-/*footer .line-footer p i{
+footer .line-footer p i{
     color: #00ff08;
     font-size: 22px;
-}*/
+}
 
 footer .line-footer p a{
     color: #fff;
