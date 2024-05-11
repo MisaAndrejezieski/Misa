@@ -310,7 +310,7 @@ footer .line-footer{
     border-bottom: 2px solid #00ff08;
 }
 
-/* -- linha sozinha --
+/* -- linha sozinha --ddd
 .border{
     border-top: 2px solid #00ff08;
 }
@@ -324,4 +324,20 @@ footer .line-footer p i{
 footer .line-footer p a{
     color: #fff;
     margin-left: 10px;
+}
+
+@media screen and (max-width: 1020px){
+    /* classes gerais */
+    .flex{
+        flex-direction: column;
+    }
+
+    .topo-do-site .flex{
+        flex-direction: column-reverse;
+    }
+
+    /* cabeçalho */
+    .menu-desktop, .btn-contato{
+        display: none;
+    }
 }
