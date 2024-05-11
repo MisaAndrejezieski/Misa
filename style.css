@@ -398,9 +398,14 @@ footer .line-footer p a {
         padding: 80px 8%;
     }
 
+    section.portifolio .flex{
+        gap: 60px;
+    }
+
     .img-port {
         width: 100%;
         max-width: 360px;
         margin: 0 auto;
     }
+
 }
