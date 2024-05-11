@@ -307,12 +307,18 @@ footer .flex{
 
 footer .line-footer{
     padding: 20px 0;
+    border-bottom: 2px solid #00ff08;
 }
 
-footer .line-footer p i{
+.border{
+    border-top: 2px solid #00ff08;
+}
+
+/* linha sozinha */
+/*footer .line-footer p i{
     color: #00ff08;
     font-size: 22px;
-}
+}*/
 
 footer .line-footer p a{
     color: #fff;
