@@ -19,7 +19,7 @@
     <!-- FIM BOOTSTRAP ICONS -->
     
     <link rel="stylesheet" href="style.css">
-    <script src="animar.js" defer></script>
+    <script src="menu.js" defer></script>
 
     <title>Misa | Transformando café em código ☕</title>
 </head>
@@ -36,12 +36,19 @@
 
             <nav class="menu-desktop">
                 <ul>
+                    <li><a href="#livro">📖 Jornada</a></li>
                     <li><a href="#topo-do-site">🏠 Início</a></li>
                     <li><a href="#especialidade">⚙️ Especialidades</a></li>
                     <li><a href="#sobre">😎 Sobre</a></li>
                     <li><a href="#projetos">📁 Projetos</a></li>
                 </ul>
             </nav>
+
+            <div class="btn-contato">
+                <a href="#contato">
+                    <button>📞 Vamos conversar</button>
+                </a>
+            </div><!--btn-contato-->
 
             <div class="btn-abrir-menu" id="btn-menu">
                 <i class="bi bi-list"></i>
@@ -54,6 +61,7 @@
 
                 <nav>
                     <ul>
+                        <li><a href="#livro">📖 Jornada</a></li>
                         <li><a href="#topo-do-site">🏠 Início</a></li>
                         <li><a href="#especialidade">⚙️ Especialidades</a></li>
                         <li><a href="#sobre">😎 Sobre</a></li>
@@ -68,6 +76,63 @@
     </header>
 
     <main>
+
+        <!-- ========== NOVA SEÇÃO LIVRO (SCROLL SNAP) ========== -->
+        <section class="livro-section" id="livro">
+            <div class="interface">
+                <h2 class="titulo">MINHA <span>JORNADA</span></h2>
+                <p class="sub-titulo">📖 Role para virar as páginas →</p>
+                
+                <div class="livro-container">
+                    <div class="pagina ativa" id="pagina1">
+                        <div class="pagina-imagem" style="background-image: url('images/jf001.jpg');"></div>
+                        <div class="pagina-texto">
+                            <h3>🌅 Capítulo 1</h3>
+                            <p>O início de tudo. Um computador, uma paixão por tecnologia e muito café. Foi amor à primeira linha de código.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="pagina" id="pagina2">
+                        <div class="pagina-imagem" style="background-image: url('images/me.jpg');"></div>
+                        <div class="pagina-texto">
+                            <h3>💻 Capítulo 2</h3>
+                            <p>Primeiras linhas de código. Bugs, aprendizado e evolução constante. Cada erro foi um degrau na escada do conhecimento.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="pagina" id="pagina3">
+                        <div class="pagina-imagem" style="background-image: url('images/japan001.jpg');"></div>
+                        <div class="pagina-texto">
+                            <h3>🚀 Capítulo 3</h3>
+                            <p>Projetos incríveis nascem. Criatividade e técnica se encontram para criar experiências digitais memoráveis.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="pagina" id="pagina4">
+                        <div class="pagina-imagem" style="background-image: url('images/game-web-design.jpg');"></div>
+                        <div class="pagina-texto">
+                            <h3>🎮 Capítulo 4</h3>
+                            <p>Design e inovação. Transformando ideias em experiências digitais que conectam pessoas e negócios.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="pagina" id="pagina5">
+                        <div class="pagina-imagem" style="background-image: url('images/cip-benco.png');"></div>
+                        <div class="pagina-texto">
+                            <h3>🏆 Capítulo 5</h3>
+                            <p>O futuro é agora. Pronto para o próximo desafio e para criar soluções que transformam o mundo.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Controles do livro -->
+                <div class="livro-controles">
+                    <button class="btn-livro" id="prevPagina">◀ Página anterior</button>
+                    <span class="pagina-indicador">1 / 5</span>
+                    <button class="btn-livro" id="nextPagina">Próxima página ▶</button>
+                </div>
+            </div>
+        </section>
 
         <section class="topo-do-site" id="topo-do-site">
             <div class="interface">
