@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Misa - Programador Front-End que transforma café em código e bugs em soluções.">
+    <meta name="author" content="Misael Andrejezieski">
+    
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FIM GOOGLE FONTES -->
+    
+    <!-- BOOTSTRAP ICONS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- FIM BOOTSTRAP ICONS -->
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="menu.js" defer></script>
+
+    <title>Misa | Transformando café em código ☕</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="interface">
+            <div class="logo">
+                <a href="https://sites.google.com/view/msacolorfull/in%C3%ADcio">
+                    <img src="images/logo-001.png" alt="Logo Misa">
+                </a>
+            </div><!--logo-->
+
+            <nav class="menu-desktop">
+                <ul>
+                    <li><a href="#livro">📖 Jornada</a></li>
+                    <li><a href="#topo-do-site">🏠 Início</a></li>
+                    <li><a href="#especialidade">⚙️ Especialidades</a></li>
+                    <li><a href="#sobre">😎 Sobre</a></li>
+                    <li><a href="#projetos">📁 Projetos</a></li>
+                </ul>
+            </nav>
+
+            <div class="btn-contato">
+                <a href="#contato">
+                    <button>📞 Vamos conversar</button>
+                </a>
+            </div><!--btn-contato-->
+
+            <div class="btn-abrir-menu" id="btn-menu">
+                <i class="bi bi-list"></i>
+            </div>
+
+            <div class="menu-mobile" id="menu-mobile">
+                <div class="btn-fechar">
+                    <i class="bi bi-x-lg"></i>
+                </div>
+
+                <nav>
+                    <ul>
+                        <li><a href="#livro">📖 Jornada</a></li>
+                        <li><a href="#topo-do-site">🏠 Início</a></li>
+                        <li><a href="#especialidade">⚙️ Especialidades</a></li>
+                        <li><a href="#sobre">😎 Sobre</a></li>
+                        <li><a href="#projetos">📁 Projetos</a></li>
+                        <li><a href="#contato">📞 Contato</a></li>
+                    </ul>
+                </nav>
+
+            </div><!--menu-mobile-->
+            <div class="overlay-menu" id="overlay-menu"></div>
+        </div><!--interface-->
+    </header>
+
+    <main>
+
+        <!-- ========== SEÇÃO LIVRO COM SCROLL SNAP ========== -->
+        <section class="livro-section" id="livro">
+            <div class="livro-paginas">
+                <div class="livro-pagina" id="pagina1">
+                    <div class="pagina-imagem" style="background-image: url('images/jf001.jpg');"></div>
+                    <div class="pagina-conteudo">
+                        <h2>🌅 O INÍCIO</h2>
+                        <p>Um computador, uma paixão por tecnologia e muito café. Foi amor à primeira linha de código.</p>
+                    </div>
+                </div>
+                
+                <div class="livro-pagina" id="pagina2">
+                    <div class="pagina-imagem" style="background-image: url('images/me.jpg');"></div>
+                    <div class="pagina-conteudo">
+                        <h2>💻 APRENDIZADO</h2>
+                        <p>Primeiras linhas de código. Bugs, aprendizado e evolução constante. Cada erro foi um degrau na escada do conhecimento.</p>
+                    </div>
+                </div>
+                
+                <div class="livro-pagina" id="pagina3">
+                    <div class="pagina-imagem" style="background-image: url('images/japan001.jpg');"></div>
+                    <div class="pagina-conteudo">
+                        <h2>🚀 PROJETOS</h2>
+                        <p>Projetos incríveis nascem. Criatividade e técnica se encontram para criar experiências digitais memoráveis.</p>
+                    </div>
+                </div>
+                
+                <div class="livro-pagina" id="pagina4">
+                    <div class="pagina-imagem" style="background-image: url('images/game-web-design.jpg');"></div>
+                    <div class="pagina-conteudo">
+                        <h2>🎮 INOVAÇÃO</h2>
+                        <p>Design e inovação. Transformando ideias em experiências digitais que conectam pessoas e negócios.</p>
+                    </div>
+                </div>
+                
+                <div class="livro-pagina" id="pagina5">
+                    <div class="pagina-imagem" style="background-image: url('images/cip-benco.png');"></div>
+                    <div class="pagina-conteudo">
+                        <h2>🏆 FUTURO</h2>
+                        <p>O futuro é agora. Pronto para o próximo desafio e para criar soluções que transformam o mundo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="topo-do-site" id="topo-do-site">
+            <div class="interface">
+                <div class="flex">
+                    <div class="txt-topo-site">
+                        <h1>Transformo <span>café em código</span> ☕ → 💻</h1>
+                        <p>💻 Programador front-end que tem um relacionamento sério com café e uma relação de amor e ódio com bugs. Faço sites que carregam rápido, funcionam bem e ainda conto pelo menos duas piadas ruins no processo. Bora criar algo foda? 🚀</p>
+
+                        <div class="btn-contato">
+                            <a href="#contato">
+                                <button>👉 Quero um site dos meus sonhos</button>
+                            </a>
+                        </div>
+                    </div><!--txt-topo-site-->
+
+                    <div class="img-topo-site">
+                        <img src="images/jf001.jpg" alt="Misa programador">
+                    </div><!--img-topo-site-->
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--topo-do-site-->
+
+        <section class="especiliadades" id="especialidade">
+            <div class="interface">
+                <h2 class="titulo">MINHAS <span>ESPECIALIDADES</span></h2>
+                <div class="flex">
+                    <div class="especialidades-box">
+                        <i class="bi bi-code-square"></i>
+                        <h3>Website</h3>
+                        <p>Sites que carregam mais rápido que minha paciência explicando que "não, não é só apertar um botão". Responsivo, bonito e sem gambiarra (prometo 🤞).</p>
+                    </div><!--especialidades-box-->
+
+                    <div class="especialidades-box">
+                        <i class="bi bi-cart"></i>
+                        <h3>Loja online</h3>
+                        <p>Seu e-commerce vendendo enquanto você dorme. Ou enquanto assiste Netflix. Pagamento integrado, carrinho esperto e segurança nível "banco suíço" 🛡️.</p>
+                    </div><!--especialidades-box-->
+
+                    <div class="especialidades-box">
+                        <i class="bi bi-wordpress"></i>
+                        <h3>Blog</h3>
+                        <p>Espaço pra você escrever sobre a vida, o universo, ou porque seu gato é melhor que o da vizinha. Otimizado pro Google e fácil de editar (até sua avó consegue) 📝.</p>
+                    </div><!--especialidades-box-->
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--especiliadades-->
+
+        <section class="sobre" id="sobre">
+            <div class="interface">
+                <div class="flex">
+                    <div class="img-sobre">
+                        <img src="images/me.jpg" alt="Foto do Misa">
+                    </div><!--img-sobre-->
+
+                    <div class="txt-sobre">
+                        <h2>PRAZER, <span>SOU O MISA.</span></h2>
+                        <p>👨‍💻 Eu sou o Misa. Programador, viciado em café e especialista em transformar "não consigo" em "olha só que legal".</p>
+                        <p>🐛 Minha relação com bugs é igual àquele parente chato: sempre aparece na hora errada, mas a gente dá um jeito. E quando resolvo um problema difícil? Comemoro como se fosse gol na final da Copa.</p>
+                        <p>🚀 Bora fazer um site foda? Garanto bom humor, código limpo e no máximo 2 piadas ruins por projeto. Aceito pagamento em café também (mentira... ou não).</p>
+                        <div class="btn-social">
+                            <a href="https://www.instagram.com/misaelandrejezieski/?hl=pt_BR" target="_blank"><button><i class="bi bi-instagram"></i></button></a>
+                            <a href="https://www.facebook.com/profile.php?id=100034358779961" target="_blank"><button><i class="bi bi-facebook"></i></button></a>
+                            <a href="https://sites.google.com/view/misa-misa/home" target="_blank"><button><i class="bi bi-google"></i></button></a>
+                        </div><!--btn-social-->
+                    </div><!--txt-sobre-->
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--sobre-->
+
+        <section class="portfolio" id="projetos">
+            <div class="interface">
+                <h2 class="titulo">MEU <span>PORTFÓLIO</span></h2>
+                <div class="flex">
+                    <div class="img-port" style="background-image: url('images/japan001.jpg');">
+                        <div class="overlay">🌙 Japan Vibes</div>
+                    </div>
+                    <div class="img-port" style="background-image: url('images/game-web-design.jpg');">
+                        <div class="overlay">🎮 Game UI/UX</div>
+                    </div>
+                    <div class="img-port" style="background-image: url('images/cip-benco.png');">
+                        <div class="overlay">🏢 Cip Benco System</div>
+                    </div>
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--portfolio-->
+
+        <section class="formulario" id="contato">
+            <div class="interface">
+                <h2 class="titulo">FALA <span>COMIGO</span></h2>
+
+                <form action="">
+                    <input type="text" placeholder="Seu nome (pode ser apelido, não vou julgar)" required>
+                    <input type="email" placeholder="Seu e-mail (prometo que não é spam)" required>
+                    <input type="tel" placeholder="Seu WhatsApp com DDD">
+                    <textarea placeholder="Digite sua mensagem aqui... Pode contar uma piada se quiser 😄" required></textarea>
+                    <div class="btn-enviar"><input type="submit" value="ENVIAR 🚀"></div>
+                </form>
+            </div><!--interface-->
+        </section><!--formulario-->
+
+    </main>
+
+    <footer>
+        <div class="interface">
+            <div class="line-footer">
+                <div class="flex">
+                    <div class="logo-footer">
+                        <img src="images/logo-001.png" alt="Logotipo Misa">
+                    </div><!--logo-footer-->
+                    <div class="btn-social">
+                        <a href="https://www.instagram.com/misaelandrejezieski/?hl=pt_BR" target="_blank"><button><i class="bi bi-instagram"></i></button></a>
+                        <a href="https://www.facebook.com/profile.php?id=100034358779961" target="_blank"><button><i class="bi bi-facebook"></i></button></a>
+                        <a href="https://sites.google.com/view/misa-misa/home" target="_blank"><button><i class="bi bi-google"></i></button></a>
+                    </div><!--btn-social-->
+                </div>
+            </div><!--line-footer-->
+
+            <div class="line-footer borda">
+                <p><i class="bi bi-envelope-fill"></i> <a href="mailto:misaelandrejezieski130982@outlook.com.br">misaelandrejezieski130982@outlook.com.br</a></p>
+            </div><!--line-footer-->
+            
+            <div class="line-footer">
+                <p style="color: #5c5c5c; text-align: center; margin-top: 20px;">💚 Misa — código, café e bom humor desde 1982</p>
+            </div>
+        </div><!--interface-->
+    </footer>
+
+</body>
+
+</html>
