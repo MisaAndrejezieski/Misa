@@ -57,13 +57,6 @@ form .btn-enviar input:hover {
 /* ESTILO DO CABEÇALHO */
 header {
     padding: 40px 4%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(10px);
 }
 
 header>.interface {
@@ -160,158 +153,9 @@ header nav.menu-desktop ul li {
     display: none;
 }
 
-/* ========== SEÇÃO LIVRO COM EFEITO 3D ========== */
-.livro-section {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #000, #0a0a0a);
-    padding: 120px 20px 80px 20px;
-}
-
-.livro-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 60px;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.livro {
-    width: 500px;
-    height: 500px;
-    perspective: 1500px;
-}
-
-.pagina-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
-    transform-style: preserve-3d;
-    border-radius: 10px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-}
-
-.pagina-wrapper.virando {
-    transform: rotateY(-180deg);
-}
-
-.pagina {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 255, 8, 0.2);
-}
-
-.pagina.frente {
-    background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
-    border: 1px solid rgba(0, 255, 8, 0.3);
-}
-
-.pagina.verso {
-    background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
-    transform: rotateY(180deg);
-    border: 1px solid rgba(0, 255, 8, 0.3);
-}
-
-.pagina-conteudo {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.pagina-imagem {
-    width: 100%;
-    height: 55%;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-
-.pagina-texto {
-    padding: 25px;
-    text-align: center;
-}
-
-.pagina-texto h2 {
-    font-size: 28px;
-    color: #00FF08;
-    margin-bottom: 15px;
-    font-family: 'Parisienne', cursive;
-    text-shadow: 0 0 5px rgba(0, 255, 8, 0.3);
-}
-
-.pagina-texto p {
-    font-size: 16px;
-    color: #ccc;
-    line-height: 1.5;
-}
-
-/* Controles do livro */
-.livro-controles {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-}
-
-.scroll-indicator-livro {
-    text-align: center;
-}
-
-.scroll-bar {
-    width: 4px;
-    height: 200px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    margin: 0 auto 15px auto;
-    position: relative;
-}
-
-.scroll-progress {
-    width: 100%;
-    height: 0%;
-    background: #00FF08;
-    border-radius: 10px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transition: height 0.3s ease;
-    box-shadow: 0 0 10px #00FF08;
-}
-
-.scroll-hint {
-    color: #00FF08;
-    font-size: 14px;
-    animation: pisca 1.5s infinite alternate;
-}
-
-.pagina-counter {
-    color: #fff;
-    font-size: 18px;
-    background: rgba(0, 255, 8, 0.1);
-    padding: 8px 20px;
-    border-radius: 30px;
-    border: 1px solid rgba(0, 255, 8, 0.3);
-}
-
-.pagina-counter span:first-child {
-    color: #00FF08;
-    font-weight: bold;
-    font-size: 24px;
-}
-
 /* ESTILO DO TOPO DO SITE */
 section.topo-do-site {
-    padding: 120px 4% 40px 4%;
+    padding: 40px 4%;
 }
 
 section.topo-do-site .flex {
@@ -354,7 +198,7 @@ section.topo-do-site .flex {
 
 /* ESTILO DAS ESPECIALIDADES */
 section.especiliadades {
-    padding: 80px 4%;
+    padding: 40px 4%;
 }
 
 section.especiliadades .flex {
@@ -563,6 +407,127 @@ footer .line-footer p a {
     color: #fff;
 }
 
+/* ========== SEÇÃO LIVRO (NOVA) ========== */
+.livro-section {
+    padding: 80px 4%;
+    background: linear-gradient(135deg, #000, #0a0a0a);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.livro-section .titulo {
+    margin-bottom: 10px;
+}
+
+.sub-titulo {
+    text-align: center;
+    color: #00FF08;
+    margin-bottom: 50px;
+    font-size: 18px;
+    animation: pisca 1.5s infinite alternate;
+}
+
+.livro-container {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    box-shadow: 0 0 40px rgba(0, 255, 8, 0.2);
+}
+
+.pagina {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    background: rgba(20, 20, 20, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 255, 8, 0.3);
+    animation: fadeIn 0.5s ease;
+}
+
+.pagina.ativa {
+    display: grid;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.pagina-imagem {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.pagina-texto {
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pagina-texto h3 {
+    font-size: 28px;
+    color: #00FF08;
+    margin-bottom: 20px;
+    font-family: 'Parisienne', cursive;
+}
+
+.pagina-texto p {
+    color: #ccc;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.livro-controles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.btn-livro {
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: transparent;
+    border: 2px solid #00FF08;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: .3s;
+    color: #00FF08;
+}
+
+.btn-livro:hover {
+    background-color: #00FF08;
+    color: #000;
+    box-shadow: 0 0 15px #00FF08;
+    transform: scale(1.05);
+}
+
+.pagina-indicador {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    background: rgba(0, 255, 8, 0.2);
+    padding: 8px 20px;
+    border-radius: 40px;
+    border: 1px solid rgba(0, 255, 8, 0.5);
+}
+
 /* RESPONSIVIDADE */
 @media screen and (max-width: 1020px) {
     .flex {
@@ -587,8 +552,12 @@ footer .line-footer p a {
         display: block;
     }
 
+    section.topo-do-site .flex {
+        gap: 40px;
+    }
+
     section.topo-do-site {
-        padding: 100px 8% 40px 8%;
+        padding: 20px 8%;
     }
 
     .topo-do-site h1 {
@@ -645,17 +614,35 @@ footer .line-footer p a {
         text-align: center;
     }
 
-    /* Responsividade do livro */
-    .livro {
-        width: 320px;
-        height: 420px;
+    /* Responsividade da seção livro */
+    .pagina {
+        grid-template-columns: 1fr;
     }
     
-    .pagina-texto h2 {
-        font-size: 22px;
+    .pagina-imagem {
+        height: 250px;
+    }
+    
+    .pagina-texto {
+        padding: 30px 20px;
+        text-align: center;
+    }
+    
+    .pagina-texto h3 {
+        font-size: 24px;
     }
     
     .pagina-texto p {
+        font-size: 16px;
+    }
+    
+    .livro-controles {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .btn-livro {
+        padding: 10px 20px;
         font-size: 14px;
     }
 }
