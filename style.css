@@ -285,45 +285,54 @@ section.portfolio {
     box-shadow: 0 0 40px 10px #ffffff1d;
 }
 
-section.portfolio .flex {
-    justify-content: space-around;
+#projetos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-items: center;
     margin-top: 60px;
 }
 
-.img-port {
-    width: 360px;
-    height: 460px;
+#projetos-container .img-port {
+    width: 100%;
+    max-width: 360px;
+    height: 420px;
     background-size: cover;
-    background-position: 100% 0%;
+    background-position: center;
     transition: 8s;
     cursor: pointer;
     border-radius: 40px;
     position: relative;
+    border: 2px solid rgba(0, 255, 8, 0.1);
 }
 
-.img-port:hover {
+#projetos-container .img-port:hover {
     background-position: 100% 100%;
+    border-color: rgba(0, 255, 8, 0.4);
+    box-shadow: 0 0 30px rgba(0, 255, 8, 0.2);
 }
 
-.overlay {
+#projetos-container .img-port .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #000000b8;
+    background-color: rgba(0, 0, 0, 0.75);
     border-radius: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 600;
     color: #fff;
+    text-align: center;
+    padding: 20px;
     opacity: 0;
-    transition: .5s;
+    transition: 0.5s;
 }
 
-.overlay:hover {
+#projetos-container .img-port .overlay:hover {
     opacity: 1;
 }
 
@@ -474,14 +483,13 @@ footer .line-footer p a {
         padding: 80px 8%;
     }
 
-    .img-port {
-        width: 100%;
-        max-width: 360px;
-        margin: 0 auto;
+    #projetos-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
     }
     
-    section.portfolio .flex {
-        gap: 60px;
+    #projetos-container .img-port {
+        height: 320px;
     }
 
     footer .flex {
@@ -491,5 +499,17 @@ footer .line-footer p a {
 
     footer .line-footer {
         text-align: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #projetos-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    #projetos-container .img-port {
+        max-width: 100%;
+        height: 280px;
     }
 }
