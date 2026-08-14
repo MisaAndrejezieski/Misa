@@ -279,7 +279,9 @@ section.sobre .flex {
     box-shadow: 0 0 15px #00FF08;
 }
 
-/* ESTILO DO PORTFÓLIO */
+/* ==================================================
+   ESTILO DO PORTFÓLIO - VERSÃO CORRIGIDA
+   ================================================== */
 section.portfolio {
     padding: 80px 4%;
     box-shadow: 0 0 40px 10px #ffffff1d;
@@ -416,7 +418,11 @@ footer .line-footer p a {
     color: #fff;
 }
 
-/* RESPONSIVIDADE */
+/* ==================================================
+   RESPONSIVIDADE - COMPLETO
+   ================================================== */
+
+/* TABLETS E TELAS MÉDIAS */
 @media screen and (max-width: 1020px) {
     .flex {
         flex-direction: column;
@@ -483,6 +489,7 @@ footer .line-footer p a {
         padding: 80px 8%;
     }
 
+    /* AJUSTE DOS PROJETOS EM TABLET */
     #projetos-container {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 25px;
@@ -502,14 +509,80 @@ footer .line-footer p a {
     }
 }
 
+/* CELULARES */
 @media screen and (max-width: 600px) {
+    /* AJUSTE DOS PROJETOS EM CELULAR */
     #projetos-container {
         grid-template-columns: 1fr;
         gap: 25px;
+        padding: 0 10px;
     }
     
     #projetos-container .img-port {
         max-width: 100%;
         height: 280px;
+    }
+
+    #projetos-container .img-port .overlay {
+        font-size: 18px;
+        padding: 15px;
+    }
+
+    .topo-do-site h1 {
+        font-size: 26px;
+        line-height: 35px;
+    }
+
+    h2.titulo {
+        font-size: 28px;
+    }
+
+    .especiliadades .especialidades-box {
+        padding: 25px;
+    }
+
+    .especiliadades .especialidades-box i {
+        font-size: 50px;
+    }
+
+    .especiliadades .especialidades-box h3 {
+        font-size: 22px;
+    }
+
+    .btn-social button {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+
+    form input,
+    form textarea {
+        font-size: 16px;
+        padding: 15px 12px;
+    }
+
+    footer .line-footer p {
+        font-size: 14px;
+    }
+}
+
+/* CELULARES MUITO PEQUENOS */
+@media screen and (max-width: 400px) {
+    #projetos-container .img-port {
+        height: 220px;
+    }
+
+    #projetos-container .img-port .overlay {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .topo-do-site h1 {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    h2.titulo {
+        font-size: 24px;
     }
 }
