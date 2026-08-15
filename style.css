@@ -338,6 +338,13 @@ section.portfolio {
     opacity: 1;
 }
 
+/* AJUSTE PARA AS IMAGENS DOS PROJETOS */
+#projetos-container .img-port {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 /* ESTILO DO FORMULÁRIO DE CONTATO */
 section.formulario {
     padding: 80px 4%;
