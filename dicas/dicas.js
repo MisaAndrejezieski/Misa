@@ -1,128 +1,100 @@
-// ============================================================
-// DICAS.JS — Lógica da página de dicas (estilo Site-Bonito)
-// ============================================================
+let currentPageIndex = 0;
+const pages = document.querySelectorAll('.page');
+const totalImages = 12; // Número total de imagens
+const background = document.querySelector('.background');
+const navLinks = document.querySelectorAll('.nav-link');
+let timeout;
 
-document.addEventListener('DOMContentLoaded', () => {
-
-    const pages = document.querySelectorAll('.page');
-    const navLinks = document.querySelectorAll('.dicas-nav-link');
-    const cards = document.querySelectorAll('.dicas-lista-card[data-target]');
-    let currentPageIndex = 0;
-    let timeout;
-
-    // ----------------------------------------------------------
-    // Mostra a página pelo índice
-    // ----------------------------------------------------------
-    function showPage(index) {
-        if (index < 0 || index >= pages.length) return;
-
-        pages.forEach((page, i) => {
-            page.classList.toggle('active', i === index);
-        });
-
-        navLinks.forEach((link, i) => {
-            link.classList.toggle('active', i === index);
-        });
-
-        currentPageIndex = index;
-        history.replaceState(null, '', '#' + pages[index].id);
-        pages[index].scrollTop = 0;
-    }
-
-    // ----------------------------------------------------------
-    // Navegação por clique no menu
-    // ----------------------------------------------------------
-    navLinks.forEach((link, index) => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            showPage(index);
-        });
+// Função para mostrar a página atual
+function showPage(index) {
+    pages.forEach((page, i) => {
+        if (i === index) {
+            page.classList.add('active');
+        } else {
+            page.classList.remove('active');
+        }
     });
-
-    // ----------------------------------------------------------
-    // Navegação por clique nos cards (lista)
-    // ----------------------------------------------------------
-    cards.forEach(card => {
-        card.addEventListener('click', () => {
-            const target = parseInt(card.dataset.target, 10);
-            showPage(target);
-        });
+    // Atualiza o link ativo no menu
+    navLinks.forEach((link, i) => {
+        if (i === index) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
     });
+}
 
-    // ----------------------------------------------------------
-    // Links internos (voltar pra lista, etc.)
-    // ----------------------------------------------------------
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (!href || href === '#') return;
+// Função para carregar imagens de fundo dinamicamente
+function loadBackground() {
+    const imageNumber = (currentPageIndex % totalImages) + 1; // Alterna entre as 12 imagens
+    const imageUrl = `images/a${imageNumber.toString().padStart(3, '0')}.jpg`;
+    console.log(`Carregando imagem: ${imageUrl}`); // Log para depuração
 
-            const targetId = href.substring(1);
-            const targetIndex = Array.from(pages).findIndex(p => p.id === targetId);
+    // Pré-carrega a imagem para evitar atrasos
+    const img = new Image();
+    img.src = imageUrl;
+    img.onload = () => {
+        background.style.backgroundImage = `url('${imageUrl}')`;
+    };
+    img.onerror = () => {
+        console.error(`Erro ao carregar a imagem: ${imageUrl}`); // Log de erro
+    };
+}
 
-            if (targetIndex !== -1) {
-                e.preventDefault();
-                showPage(targetIndex);
-            }
-        });
-    });
-
-    // ----------------------------------------------------------
-    // Navegação por scroll (mouse) — debounce
-    // ----------------------------------------------------------
-    window.addEventListener('wheel', (e) => {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => {
-            const currentPage = pages[currentPageIndex];
-            const isScrollingDown = e.deltaY > 0;
-            const isAtTop = currentPage.scrollTop === 0;
-            const isAtBottom = currentPage.scrollTop + currentPage.clientHeight >= currentPage.scrollHeight - 2;
-
-            if (isScrollingDown && isAtBottom && currentPageIndex < pages.length - 1) {
-                showPage(currentPageIndex + 1);
-            } else if (!isScrollingDown && isAtTop && currentPageIndex > 0) {
-                showPage(currentPageIndex - 1);
-            }
-        }, 80);
-    }, { passive: true });
-
-    // ----------------------------------------------------------
-    // Navegação por swipe (touch) — só dispara no topo/fim
-    // ----------------------------------------------------------
-    let startY = 0;
-    window.addEventListener('touchstart', (e) => {
-        startY = e.touches[0].clientY;
-    }, { passive: true });
-
-    window.addEventListener('touchend', (e) => {
-        const endY = e.changedTouches[0].clientY;
-        const deltaY = startY - endY;
-
-        if (Math.abs(deltaY) < 80) return;
-
+// Controle de scroll personalizado com debounce
+window.addEventListener('wheel', (e) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
         const currentPage = pages[currentPageIndex];
+        const isScrollingDown = e.deltaY > 0;
         const isAtTop = currentPage.scrollTop === 0;
-        const isAtBottom = currentPage.scrollTop + currentPage.clientHeight >= currentPage.scrollHeight - 2;
+        const isAtBottom = currentPage.scrollTop + currentPage.clientHeight >= currentPage.scrollHeight;
 
-        if (deltaY > 0 && isAtBottom && currentPageIndex < pages.length - 1) {
-            showPage(currentPageIndex + 1);
-        } else if (deltaY < 0 && isAtTop && currentPageIndex > 0) {
-            showPage(currentPageIndex - 1);
+        if (isScrollingDown && isAtBottom) {
+            currentPageIndex = Math.min(currentPageIndex + 1, pages.length - 1);
+            showPage(currentPageIndex);
+            loadBackground();
+        } else if (!isScrollingDown && isAtTop) {
+            currentPageIndex = Math.max(currentPageIndex - 1, 0);
+            showPage(currentPageIndex);
+            loadBackground();
         }
-    }, { passive: true });
+    }, 100); // Ajuste o tempo conforme necessário
+});
 
-    // ----------------------------------------------------------
-    // Suporte a #hash na URL ao carregar a página
-    // ----------------------------------------------------------
-    const hash = window.location.hash.substring(1);
-    if (hash) {
-        const index = Array.from(pages).findIndex(p => p.id === hash);
-        if (index !== -1) {
-            showPage(index);
-            return;
+// Suporte para dispositivos touch
+let startY;
+window.addEventListener('touchstart', (e) => {
+    startY = e.touches[0].clientY;
+});
+window.addEventListener('touchend', (e) => {
+    const endY = e.changedTouches[0].clientY;
+    const deltaY = startY - endY;
+    if (Math.abs(deltaY) > 50) { // Sensibilidade do swipe
+        if (deltaY > 0) {
+            // Swipe para cima
+            currentPageIndex = Math.min(currentPageIndex + 1, pages.length - 1);
+        } else {
+            // Swipe para baixo
+            currentPageIndex = Math.max(currentPageIndex - 1, 0);
         }
+        showPage(currentPageIndex);
+        loadBackground();
     }
+});
 
-    // Inicialização
-    showPage(0);
+// Navegação pelo menu
+navLinks.forEach((link, index) => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        currentPageIndex = index;
+        showPage(currentPageIndex);
+        loadBackground();
+    });
+});
+
+// Inicialização
+window.addEventListener('load', () => {
+    showPage(currentPageIndex);
+    loadBackground();
 });
