@@ -280,7 +280,7 @@ section.sobre .flex {
 }
 
 /* ==================================================
-   ESTILO DO PORTFÓLIO - VERSÃO CENTRALIZADA
+   ESTILO DO PORTFÓLIO
    ================================================== */
 section.portfolio {
     padding: 80px 4%;
@@ -340,6 +340,248 @@ section.portfolio {
 
 #projetos-container .img-port .overlay:hover {
     opacity: 1;
+}
+
+/* ==================================================
+   ESTILO DA SEÇÃO DE DICAS DE INFORMÁTICA
+   ================================================== */
+section.dicas {
+    padding: 80px 4%;
+}
+
+.subtitulo-dicas {
+    color: #8a8a8a;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.dicas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+    justify-items: center;
+}
+
+.dica-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 255, 8, 0.15);
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: .3s;
+}
+
+.dica-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 30px rgba(0, 255, 8, 0.25);
+    border-color: rgba(0, 255, 8, 0.5);
+}
+
+.dica-tag {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 5px 14px;
+    border-radius: 30px;
+    text-transform: uppercase;
+}
+
+.dica-tag.excel {
+    background-color: rgba(0, 255, 8, 0.15);
+    color: #00FF08;
+    border: 1px solid rgba(0, 255, 8, 0.4);
+}
+
+.dica-tag.windows {
+    background-color: rgba(0, 150, 255, 0.15);
+    color: #4da6ff;
+    border: 1px solid rgba(0, 150, 255, 0.4);
+}
+
+.dica-tag.word {
+    background-color: rgba(43, 87, 154, 0.2);
+    color: #5b9bd5;
+    border: 1px solid rgba(91, 155, 213, 0.4);
+}
+
+.dica-tag.seguranca {
+    background-color: rgba(255, 200, 0, 0.15);
+    color: #ffc800;
+    border: 1px solid rgba(255, 200, 0, 0.4);
+}
+
+.dica-card h3 {
+    color: #fff;
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+.dica-card p {
+    color: #b0b0b0;
+    font-size: 15px;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.dica-link {
+    color: #00FF08;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: .2s;
+    align-self: flex-start;
+    display: inline-block;
+}
+
+.dica-link:hover {
+    text-shadow: 0 0 10px #00FF08;
+    transform: translateX(5px);
+}
+
+/* ==================================================
+   ESTILO DA PÁGINA INDIVIDUAL DE DICA
+   ================================================== */
+.dica-artigo {
+    padding: 60px 4% 80px;
+    color: #fff;
+}
+
+.dica-artigo .interface {
+    max-width: 860px;
+}
+
+.voltar-dicas {
+    display: inline-block;
+    color: #00FF08;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 30px;
+    transition: .2s;
+}
+
+.voltar-dicas:hover {
+    text-shadow: 0 0 10px #00FF08;
+    transform: translateX(-5px);
+}
+
+.dica-artigo h1 {
+    font-size: 38px;
+    line-height: 1.3;
+    margin: 20px 0 30px;
+    color: #fff;
+}
+
+.dica-artigo h2 {
+    font-size: 26px;
+    color: #00FF08;
+    margin: 45px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 255, 8, 0.2);
+}
+
+.dica-artigo h3 {
+    font-size: 20px;
+    color: #fff;
+    margin: 30px 0 12px;
+}
+
+.dica-artigo p {
+    color: #d0d0d0;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.dica-artigo ul {
+    margin: 15px 0 20px 25px;
+    color: #d0d0d0;
+}
+
+.dica-artigo ul li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.dica-artigo code {
+    background-color: rgba(0, 255, 8, 0.08);
+    color: #00FF08;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+}
+
+.dica-artigo pre {
+    background-color: #111;
+    border: 1px solid rgba(0, 255, 8, 0.2);
+    border-radius: 12px;
+    padding: 18px 20px;
+    overflow-x: auto;
+    margin: 15px 0 25px;
+}
+
+.dica-artigo pre code {
+    background: none;
+    color: #b8ffb8;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.intro-dica {
+    font-size: 17px;
+    color: #e0e0e0;
+    margin-bottom: 30px;
+}
+
+.aviso-dica {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    background-color: rgba(255, 200, 0, 0.08);
+    border: 1px solid rgba(255, 200, 0, 0.35);
+    border-left: 4px solid #ffc800;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 30px 0;
+}
+
+.aviso-dica i {
+    color: #ffc800;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.aviso-dica div {
+    color: #e8e8e8;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.aviso-dica strong {
+    color: #ffc800;
+}
+
+.rodape-dica {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(0, 255, 8, 0.2);
+    text-align: center;
+}
+
+.rodape-dica p {
+    color: #8a8a8a;
+    margin-bottom: 15px;
 }
 
 /* ESTILO DO FORMULÁRIO DE CONTATO */
@@ -423,7 +665,7 @@ footer .line-footer p a {
 }
 
 /* ==================================================
-   RESPONSIVIDADE - COMPLETO
+   RESPONSIVIDADE
    ================================================== */
 
 /* TABLETS E TELAS MÉDIAS */
@@ -493,7 +735,6 @@ footer .line-footer p a {
         padding: 80px 8%;
     }
 
-    /* AJUSTE DOS PROJETOS EM TABLET */
     #projetos-container {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 25px;
@@ -503,6 +744,18 @@ footer .line-footer p a {
     #projetos-container .img-port {
         height: 320px;
         max-width: 320px;
+    }
+
+    section.dicas {
+        padding: 80px 8%;
+    }
+
+    .dica-artigo h1 {
+        font-size: 30px;
+    }
+
+    .dica-artigo h2 {
+        font-size: 22px;
     }
 
     footer .flex {
@@ -517,7 +770,6 @@ footer .line-footer p a {
 
 /* CELULARES */
 @media screen and (max-width: 600px) {
-    /* AJUSTE DOS PROJETOS EM CELULAR */
     #projetos-container {
         grid-template-columns: 1fr;
         gap: 25px;
@@ -560,6 +812,36 @@ footer .line-footer p a {
         width: 50px;
         height: 50px;
         font-size: 18px;
+    }
+
+    .dicas-container {
+        grid-template-columns: 1fr;
+        padding: 0 5px;
+    }
+
+    .dica-card {
+        padding: 25px;
+    }
+
+    .dica-card h3 {
+        font-size: 18px;
+    }
+
+    .dica-artigo h1 {
+        font-size: 24px;
+    }
+
+    .dica-artigo h2 {
+        font-size: 20px;
+    }
+
+    .dica-artigo h3 {
+        font-size: 17px;
+    }
+
+    .dica-artigo p,
+    .dica-artigo ul li {
+        font-size: 15px;
     }
 
     form input,
