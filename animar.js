@@ -5,13 +5,13 @@ let overlayMenu = document.getElementById('overlay-menu');
 
 if (btnMenu) {
     btnMenu.addEventListener('click', () => {
-        menuMobile.classList.add('abrir-menu'); // CORRIGIDO: era 'abrir'
+        menuMobile.classList.add('abrir-menu');
         overlayMenu.style.display = 'block';
     });
 }
 
 function fecharMenu() {
-    menuMobile.classList.remove('abrir-menu'); // CORRIGIDO: era 'abrir'
+    menuMobile.classList.remove('abrir-menu');
     overlayMenu.style.display = 'none';
 }
 
@@ -23,7 +23,7 @@ document.querySelectorAll('.menu-mobile nav a').forEach(link => {
     link.addEventListener('click', fecharMenu);
 });
 
-// SCROLL SUAVE PARA OS LINKS
+// SCROLL SUAVE PARA OS LINKS INTERNOS
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
