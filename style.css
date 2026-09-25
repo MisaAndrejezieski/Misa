@@ -342,72 +342,6 @@ section.portfolio {
     opacity: 1;
 }
 
-/* ==================================================
-   CARD ÚNICO DE DICAS NA HOME
-   ================================================== */
-section.dicas {
-    padding: 80px 4%;
-}
-
-.card-dicas-home {
-    display: block;
-    max-width: 600px;
-    margin: 50px auto 0;
-    text-decoration: none;
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(0, 255, 8, 0.15);
-    border-radius: 24px;
-    padding: 45px 35px;
-    text-align: center;
-    transition: .3s;
-    cursor: pointer;
-}
-
-.card-dicas-home:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 35px rgba(0, 255, 8, 0.3);
-    border-color: rgba(0, 255, 8, 0.5);
-}
-
-.card-dicas-content i {
-    font-size: 65px;
-    color: #00FF08;
-    display: block;
-    margin-bottom: 20px;
-    transition: .3s;
-}
-
-.card-dicas-home:hover .card-dicas-content i {
-    text-shadow: 0 0 20px #00FF08;
-}
-
-.card-dicas-content h3 {
-    color: #fff;
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-
-.card-dicas-content p {
-    color: #b0b0b0;
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 25px;
-}
-
-.card-dicas-btn {
-    display: inline-block;
-    color: #00FF08;
-    font-weight: 600;
-    font-size: 16px;
-    transition: .2s;
-}
-
-.card-dicas-home:hover .card-dicas-btn {
-    text-shadow: 0 0 10px #00FF08;
-    transform: translateX(5px);
-}
-
 /* ESTILO DO FORMULÁRIO DE CONTATO */
 section.formulario {
     padding: 80px 4%;
@@ -489,7 +423,7 @@ footer .line-footer p a {
 }
 
 /* ==================================================
-   RESPONSIVIDADE
+   RESPONSIVIDADE - COMPLETO
    ================================================== */
 
 /* TABLETS E TELAS MÉDIAS */
@@ -559,6 +493,7 @@ footer .line-footer p a {
         padding: 80px 8%;
     }
 
+    /* AJUSTE DOS PROJETOS EM TABLET */
     #projetos-container {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 25px;
@@ -568,10 +503,6 @@ footer .line-footer p a {
     #projetos-container .img-port {
         height: 320px;
         max-width: 320px;
-    }
-
-    section.dicas {
-        padding: 80px 8%;
     }
 
     footer .flex {
@@ -586,6 +517,7 @@ footer .line-footer p a {
 
 /* CELULARES */
 @media screen and (max-width: 600px) {
+    /* AJUSTE DOS PROJETOS EM CELULAR */
     #projetos-container {
         grid-template-columns: 1fr;
         gap: 25px;
@@ -628,22 +560,6 @@ footer .line-footer p a {
         width: 50px;
         height: 50px;
         font-size: 18px;
-    }
-
-    .card-dicas-home {
-        padding: 30px 22px;
-    }
-
-    .card-dicas-content i {
-        font-size: 50px;
-    }
-
-    .card-dicas-content h3 {
-        font-size: 20px;
-    }
-
-    .card-dicas-content p {
-        font-size: 14px;
     }
 
     form input,
