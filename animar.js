@@ -5,13 +5,13 @@ let overlayMenu = document.getElementById('overlay-menu');
 
 if (btnMenu) {
     btnMenu.addEventListener('click', () => {
-        menuMobile.classList.add('abrir');
+        menuMobile.classList.add('abrir-menu'); // CORRIGIDO: era 'abrir'
         overlayMenu.style.display = 'block';
     });
 }
 
 function fecharMenu() {
-    menuMobile.classList.remove('abrir');
+    menuMobile.classList.remove('abrir-menu'); // CORRIGIDO: era 'abrir'
     overlayMenu.style.display = 'none';
 }
 
