@@ -304,12 +304,14 @@ section.portfolio {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    transition: 8s;
-    cursor: pointer;
+    transition: 1s ease;
     border-radius: 40px;
     position: relative;
     border: 2px solid rgba(0, 255, 8, 0.1);
     margin: 0 auto;
+    display: block;
+    text-decoration: none;
+    color: inherit;
 }
 
 #projetos-container .img-port:hover {
