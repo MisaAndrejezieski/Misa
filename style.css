@@ -197,15 +197,15 @@ section.topo-do-site .flex {
 }
 
 /* ESTILO DAS ESPECIALIDADES */
-section.especiliadades {
+section.especialidades {
     padding: 40px 4%;
 }
 
-section.especiliadades .flex {
+section.especialidades .flex {
     gap: 60px;
 }
 
-.especiliadades .especialidades-box {
+.especialidades .especialidades-box {
     color: #fff;
     padding: 40px;
     border-radius: 20px;
@@ -216,18 +216,18 @@ section.especiliadades .flex {
     border: 1px solid rgba(0, 255, 8, 0.15);
 }
 
-.especiliadades .especialidades-box:hover {
+.especialidades .especialidades-box:hover {
     transform: scale(1.05);
     box-shadow: 0 0 30px rgba(0, 255, 8, 0.3);
     border-color: rgba(0, 255, 8, 0.5);
 }
 
-.especiliadades .especialidades-box i {
+.especialidades .especialidades-box i {
     font-size: 70px;
     color: #00FF08;
 }
 
-.especiliadades .especialidades-box h3 {
+.especialidades .especialidades-box h3 {
     font-size: 28px;
     margin: 15px 0;
 }
@@ -467,7 +467,7 @@ footer .line-footer p a {
         width: 100%;
     }
 
-    section.especiliadades {
+    section.especialidades {
         padding: 40px 8%;
     }
 
@@ -544,15 +544,15 @@ footer .line-footer p a {
         font-size: 28px;
     }
 
-    .especiliadades .especialidades-box {
+    .especialidades .especialidades-box {
         padding: 25px;
     }
 
-    .especiliadades .especialidades-box i {
+    .especialidades .especialidades-box i {
         font-size: 50px;
     }
 
-    .especiliadades .especialidades-box h3 {
+    .especialidades .especialidades-box h3 {
         font-size: 22px;
     }
 
