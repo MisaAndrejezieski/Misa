@@ -1,33 +1,54 @@
-// ANIMAÇÕES DO MENU MOBILE
-let btnMenu = document.getElementById('btn-menu');
-let menuMobile = document.getElementById('menu-mobile');
-let overlayMenu = document.getElementById('overlay-menu');
+// ============================================================
+// MENU MOBILE
+// ============================================================
+const btnMenu = document.getElementById('btn-menu');
+const menuMobile = document.getElementById('menu-mobile');
+const overlayMenu = document.getElementById('overlay-menu');
 
-if (btnMenu) {
-    btnMenu.addEventListener('click', () => {
-        menuMobile.classList.add('abrir-menu');
-        overlayMenu.style.display = 'block';
-    });
+function abrirMenu() {
+    menuMobile.classList.add('abrir-menu');
+    if (btnMenu) btnMenu.setAttribute('aria-expanded', 'true');
 }
 
 function fecharMenu() {
     menuMobile.classList.remove('abrir-menu');
-    overlayMenu.style.display = 'none';
+    if (btnMenu) btnMenu.setAttribute('aria-expanded', 'false');
+}
+
+if (btnMenu && menuMobile) {
+    btnMenu.addEventListener('click', () => {
+        if (menuMobile.classList.contains('abrir-menu')) {
+            fecharMenu();
+        } else {
+            abrirMenu();
+        }
+    });
 }
 
 if (overlayMenu) {
     overlayMenu.addEventListener('click', fecharMenu);
 }
 
+// Fecha o menu ao clicar em qualquer link dentro dele
 document.querySelectorAll('.menu-mobile nav a').forEach(link => {
     link.addEventListener('click', fecharMenu);
 });
 
-// SCROLL SUAVE PARA OS LINKS
+// Fecha o menu com a tecla ESC
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && menuMobile.classList.contains('abrir-menu')) {
+        fecharMenu();
+    }
+});
+
+// ============================================================
+// SCROLL SUAVE PARA OS LINKS INTERNOS
+// ============================================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
         if (href === '#' || href === '') return;
+
         const target = document.querySelector(href);
         if (target) {
             e.preventDefault();
