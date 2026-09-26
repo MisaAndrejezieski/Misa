@@ -50,7 +50,7 @@
                 </a>
             </div><!--btn-contato-->
 
-            <div class="btn-abrir-menu" id="btn-menu">
+            <div class="btn-abrir-menu" id="btn-menu" aria-expanded="false" aria-controls="menu-mobile">
                 <i class="bi bi-list"></i>
             </div>
 
@@ -210,17 +210,11 @@
             <div class="interface">
                 <h2 class="titulo">FALA <span>COMIGO</span></h2>
 
-                <form action="https://formsubmit.co/misaelandrejezieski130982@outlook.com.br" method="POST">
-                    <input type="text" name="nome" placeholder="Seu nome (pode ser apelido, não vou julgar)" required>
-                    <input type="email" name="email" placeholder="Seu e-mail (prometo que não é spam)" required>
-                    <input type="tel" name="whatsapp" placeholder="Seu WhatsApp com DDD">
-                    <textarea name="mensagem" placeholder="Digite sua mensagem aqui... Pode contar uma piada se quiser 😄" required></textarea>
-                    
-                    <!-- Configurações do FormSubmit -->
-                    <input type="hidden" name="_subject" value="Nova mensagem do portfólio Misa!">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_template" value="table">
-                    
+                <form id="form-contato">
+                    <input type="text" id="campo-nome" name="nome" placeholder="Seu nome (pode ser apelido, não vou julgar)" required>
+                    <input type="email" id="campo-email" name="email" placeholder="Seu e-mail (prometo que não é spam)" required>
+                    <input type="tel" id="campo-whatsapp" name="whatsapp" placeholder="Seu WhatsApp com DDD">
+                    <textarea id="campo-mensagem" name="mensagem" placeholder="Digite sua mensagem aqui... Pode contar uma piada se quiser 😄" required></textarea>
                     <div class="btn-enviar"><input type="submit" value="ENVIAR 🚀"></div>
                 </form>
             </div><!--interface-->
