@@ -29,12 +29,10 @@ if (overlayMenu) {
     overlayMenu.addEventListener('click', fecharMenu);
 }
 
-// Fecha o menu ao clicar em qualquer link dentro dele
 document.querySelectorAll('.menu-mobile nav a').forEach(link => {
     link.addEventListener('click', fecharMenu);
 });
 
-// Fecha o menu com a tecla ESC
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && menuMobile.classList.contains('abrir-menu')) {
         fecharMenu();
@@ -42,7 +40,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 // ============================================================
-// SCROLL SUAVE PARA OS LINKS INTERNOS
+// SCROLL SUAVE
 // ============================================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -58,7 +56,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ============================================================
-// FORMULÁRIO DE CONTATO VIA MAILTO
+// FORMULÁRIO VIA MAILTO
 // ============================================================
 const formContato = document.getElementById('form-contato');
 
