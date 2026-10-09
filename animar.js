@@ -15,6 +15,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ============================================================
+// BOTÃO VOLTAR AO TOPO
+// ============================================================
+const btnTopo = document.getElementById('btn-topo');
+
+if (btnTopo) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            btnTopo.classList.add('visivel');
+        } else {
+            btnTopo.classList.remove('visivel');
+        }
+    });
+
+    btnTopo.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+// ============================================================
 // FORMULÁRIO VIA MAILTO
 // ============================================================
 const formContato = document.getElementById('form-contato');
