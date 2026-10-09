@@ -1,45 +1,4 @@
 // ============================================================
-// MENU MOBILE
-// ============================================================
-const btnMenu = document.getElementById('btn-menu');
-const menuMobile = document.getElementById('menu-mobile');
-const overlayMenu = document.getElementById('overlay-menu');
-
-function abrirMenu() {
-    menuMobile.classList.add('abrir-menu');
-    if (btnMenu) btnMenu.setAttribute('aria-expanded', 'true');
-}
-
-function fecharMenu() {
-    menuMobile.classList.remove('abrir-menu');
-    if (btnMenu) btnMenu.setAttribute('aria-expanded', 'false');
-}
-
-if (btnMenu && menuMobile) {
-    btnMenu.addEventListener('click', () => {
-        if (menuMobile.classList.contains('abrir-menu')) {
-            fecharMenu();
-        } else {
-            abrirMenu();
-        }
-    });
-}
-
-if (overlayMenu) {
-    overlayMenu.addEventListener('click', fecharMenu);
-}
-
-document.querySelectorAll('.menu-mobile nav a').forEach(link => {
-    link.addEventListener('click', fecharMenu);
-});
-
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && menuMobile.classList.contains('abrir-menu')) {
-        fecharMenu();
-    }
-});
-
-// ============================================================
 // SCROLL SUAVE
 // ============================================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
