@@ -1,15 +1,4 @@
 // ============================================================
-// LOADING SCREEN
-// ============================================================
-window.addEventListener('load', () => {
-    const loading = document.getElementById('loading-screen');
-    if (!loading) return;
-    setTimeout(() => {
-        loading.classList.add('hidden');
-    }, 900);
-});
-
-// ============================================================
 // SCROLL SUAVE
 // ============================================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -21,118 +10,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         if (target) {
             e.preventDefault();
             target.scrollIntoView({ behavior: 'smooth' });
-            fecharMenu();
         }
     });
 });
 
 // ============================================================
-// SCROLL PROGRESS BAR
+// REVEAL ON SCROLL
 // ============================================================
-const scrollProgress = document.getElementById('scroll-progress');
-
-if (scrollProgress) {
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const percentage = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-        scrollProgress.style.width = percentage + '%';
-    });
-}
-
-// ============================================================
-// CURSOR CUSTOMIZADO
-// ============================================================
-const cursorDot = document.getElementById('cursor-dot');
-const cursorRing = document.getElementById('cursor-ring');
+const reveals = document.querySelectorAll('.reveal');
 const isTouchDevice = window.matchMedia('(hover: none)').matches;
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-if (cursorDot && cursorRing && !isTouchDevice && !prefersReducedMotion) {
-    let mouseX = 0, mouseY = 0;
-    let ringX = 0, ringY = 0;
-
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        cursorDot.style.left = mouseX + 'px';
-        cursorDot.style.top = mouseY + 'px';
-        document.body.classList.add('cursor-ready');
-    });
-
-    function animateRing() {
-        ringX += (mouseX - ringX) * 0.18;
-        ringY += (mouseY - ringY) * 0.18;
-        cursorRing.style.left = ringX + 'px';
-        cursorRing.style.top = ringY + 'px';
-        requestAnimationFrame(animateRing);
-    }
-    animateRing();
-
-    const hoverTargets = document.querySelectorAll('a, button, .hero-card, .img-port, input, textarea');
-    hoverTargets.forEach(el => {
-        el.addEventListener('mouseenter', () => cursorRing.classList.add('hover'));
-        el.addEventListener('mouseleave', () => cursorRing.classList.remove('hover'));
-    });
-
-    document.addEventListener('mouseleave', () => {
-        document.body.classList.remove('cursor-ready');
-    });
-}
-
-// ============================================================
-// MENU LATERAL
-// ============================================================
-const menuToggle = document.getElementById('menu-toggle');
-const sideMenu = document.getElementById('side-menu');
-const menuOverlay = document.getElementById('menu-overlay');
-
-function abrirMenu() {
-    if (!sideMenu || !menuToggle) return;
-    sideMenu.classList.add('open');
-    menuOverlay.classList.add('open');
-    menuToggle.classList.add('active');
-    menuToggle.setAttribute('aria-expanded', 'true');
-    sideMenu.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('no-scroll');
-}
-
-function fecharMenu() {
-    if (!sideMenu || !menuToggle) return;
-    sideMenu.classList.remove('open');
-    menuOverlay.classList.remove('open');
-    menuToggle.classList.remove('active');
-    menuToggle.setAttribute('aria-expanded', 'false');
-    sideMenu.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('no-scroll');
-}
-
-if (menuToggle) {
-    menuToggle.addEventListener('click', () => {
-        if (sideMenu.classList.contains('open')) {
-            fecharMenu();
-        } else {
-            abrirMenu();
-        }
-    });
-}
-
-if (menuOverlay) {
-    menuOverlay.addEventListener('click', fecharMenu);
-}
-
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && sideMenu && sideMenu.classList.contains('open')) {
-        fecharMenu();
-    }
-});
-
-// ============================================================
-// REVEAL ON SCROLL (Intersection Observer)
-// ============================================================
-const reveals = document.querySelectorAll('.reveal');
-
-if (reveals.length && 'IntersectionObserver' in window) {
+if (reveals.length && 'IntersectionObserver' in window && !prefersReducedMotion) {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -151,7 +40,7 @@ if (reveals.length && 'IntersectionObserver' in window) {
 }
 
 // ============================================================
-// TILT 3D NOS CARDS
+// TILT 3D NOS CARDS — só desktop, sutil
 // ============================================================
 if (!isTouchDevice && !prefersReducedMotion) {
     const tiltCards = document.querySelectorAll('.tilt');
@@ -163,10 +52,10 @@ if (!isTouchDevice && !prefersReducedMotion) {
             const y = e.clientY - rect.top;
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            const rotateX = ((y - centerY) / centerY) * -6;
-            const rotateY = ((x - centerX) / centerX) * 6;
+            const rotateX = ((y - centerY) / centerY) * -5;
+            const rotateY = ((x - centerX) / centerX) * 5;
 
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
         });
 
         card.addEventListener('mouseleave', () => {
