@@ -4,19 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Misa — Programador front-end, criador de ferramentas e projetos. Café, código e bom humor.">
+    <meta name="description" content="Misa — Ferramentas, projetos e sistemas que eu construí. Café, código e bom humor.">
     <meta name="author" content="Misael Andrejezieski">
     
-    <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- FIM GOOGLE FONTES -->
     
-    <!-- BOOTSTRAP ICONS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <!-- FIM BOOTSTRAP ICONS -->
     
     <link rel="stylesheet" href="style.css">
     <script src="animar.js" defer></script>
@@ -28,14 +24,17 @@
 
     <main>
         <!-- ============================================================
-             TOPO DO SITE — HERO
+             HERO
              ============================================================ -->
         <section class="topo-do-site" id="topo-do-site">
             <div class="interface">
                 <div class="flex">
                     <div class="txt-topo-site">
                         <h1>Transformo <span>café em código</span> ☕ → 💻</h1>
-                        <p>Programador, criador de ferramentas e projetos. Escolhe por onde começar 👇</p>
+                        <p class="hero-descricao">
+                            Ferramentas que eu construí, projetos pessoais e um sistema de produção real rodando na Lactalis.
+                        </p>
+                        <p class="hero-cta">Escolhe por onde começar 👇</p>
 
                         <div class="hero-cards">
                             <a href="#ferramentas" class="hero-card">
@@ -48,7 +47,7 @@
                             </a>
                             <a href="#profissional" class="hero-card">
                                 <i class="bi bi-building"></i>
-                                <span>Profissional</span>
+                                <span>No trabalho</span>
                             </a>
                             <a href="#parceiros" class="hero-card">
                                 <i class="bi bi-people"></i>
@@ -69,61 +68,12 @@
                         <img src="images/jf001.jpg" alt="Misa programador">
                     </div><!--img-topo-site-->
                 </div><!--flex-->
+
+                <div class="scroll-hint" aria-hidden="true">
+                    <i class="bi bi-chevron-double-down"></i>
+                </div>
             </div><!--interface-->
         </section><!--topo-do-site-->
-
-        <!-- ============================================================
-             ESPECIALIDADES
-             ============================================================ -->
-        <section class="especialidades" id="especialidade">
-            <div class="interface">
-                <h2 class="titulo">MINHAS <span>ESPECIALIDADES</span></h2>
-                <div class="flex">
-                    <div class="especialidades-box">
-                        <i class="bi bi-code-square"></i>
-                        <h3>Website</h3>
-                        <p>Sites que carregam mais rápido que minha paciência explicando que "não, não é só apertar um botão". Responsivo, bonito e sem gambiarra (prometo 🤞).</p>
-                    </div><!--especialidades-box-->
-
-                    <div class="especialidades-box">
-                        <i class="bi bi-cart"></i>
-                        <h3>Loja online</h3>
-                        <p>Seu e-commerce vendendo enquanto você dorme. Ou enquanto assiste Netflix. Pagamento integrado, carrinho esperto e segurança de primeira linha 🛡️.</p>
-                    </div><!--especialidades-box-->
-
-                    <div class="especialidades-box">
-                        <i class="bi bi-wordpress"></i>
-                        <h3>Blog</h3>
-                        <p>Espaço pra você escrever sobre a vida, o universo, ou porque seu gato é melhor que o da vizinha. Otimizado pro Google e fácil de editar (até sua avó consegue) 📝.</p>
-                    </div><!--especialidades-box-->
-                </div><!--flex-->
-            </div><!--interface-->
-        </section><!--especialidades-->
-
-        <!-- ============================================================
-             SOBRE
-             ============================================================ -->
-        <section class="sobre" id="sobre">
-            <div class="interface">
-                <div class="flex">
-                    <div class="img-sobre">
-                        <img src="images/me.jpg" alt="Foto do Misa">
-                    </div><!--img-sobre-->
-
-                    <div class="txt-sobre">
-                        <h2>PRAZER, <span>SOU O MISA.</span></h2>
-                        <p>👨‍💻 Eu sou o Misa. Programador, viciado em café e especialista em transformar "não consigo" em "olha só que legal".</p>
-                        <p>🐛 Minha relação com bugs é igual àquele parente chato: sempre aparece na hora errada, mas a gente dá um jeito. E quando resolvo um problema difícil? Comemoro como se fosse gol na final da Copa.</p>
-                        <p>🚀 Bora fazer um site foda? Garanto bom humor, código limpo e no máximo 2 piadas ruins por projeto. Aceito pagamento em café também (mentira... ou não).</p>
-                        <div class="btn-social">
-                            <a href="https://www.instagram.com/misaelandrejezieski/?hl=pt_BR" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><button><i class="bi bi-instagram"></i></button></a>
-                            <a href="https://www.facebook.com/profile.php?id=100034358779961" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><button><i class="bi bi-facebook"></i></button></a>
-                            <a href="https://sites.google.com/view/misa-misa/home" target="_blank" rel="noopener noreferrer" aria-label="Google Sites"><button><i class="bi bi-google"></i></button></a>
-                        </div><!--btn-social-->
-                    </div><!--txt-sobre-->
-                </div><!--flex-->
-            </div><!--interface-->
-        </section><!--sobre-->
 
         <!-- ============================================================
              FERRAMENTAS
@@ -153,20 +103,6 @@
         </section><!--ferramentas-->
 
         <!-- ============================================================
-             PROJETO PROFISSIONAL
-             ============================================================ -->
-        <section class="profissional" id="profissional">
-            <div class="interface">
-                <h2 class="titulo">PROJETO <span>PROFISSIONAL</span></h2>
-                <div class="flex" id="profissional-container">
-                    <a href="https://pudimflow-o5e2dnl0n-misael-andrejezieskis-projects.vercel.app/" class="img-port destaque" style="background-image: url('images/PudimFlow.webp');" target="_blank" rel="noopener noreferrer">
-                        <div class="overlay">🍮 PudimFlow · Gestão de produção (Lactalis)</div>
-                    </a>
-                </div>
-            </div><!--interface-->
-        </section><!--profissional-->
-
-        <!-- ============================================================
              PROJETOS PESSOAIS
              ============================================================ -->
         <section class="portfolio" id="projetos">
@@ -187,6 +123,74 @@
                 </div>
             </div><!--interface-->
         </section><!--portfolio-->
+
+        <!-- ============================================================
+             NO TRABALHO (destaque)
+             ============================================================ -->
+        <section class="profissional" id="profissional">
+            <div class="interface">
+                <h2 class="titulo">NO <span>TRABALHO</span></h2>
+                <p class="subtitulo-secao">Sistema de produção real, rodando em ambiente industrial.</p>
+                <div class="flex" id="profissional-container">
+                    <a href="https://pudimflow-o5e2dnl0n-misael-andrejezieskis-projects.vercel.app/" class="img-port destaque" style="background-image: url('images/PudimFlow.webp');" target="_blank" rel="noopener noreferrer">
+                        <div class="overlay">🍮 PudimFlow · Gestão de produção (Lactalis)</div>
+                    </a>
+                </div>
+            </div><!--interface-->
+        </section><!--profissional-->
+
+        <!-- ============================================================
+             SOBRE
+             ============================================================ -->
+        <section class="sobre" id="sobre">
+            <div class="interface">
+                <div class="flex">
+                    <div class="img-sobre">
+                        <img src="images/me.jpg" alt="Foto do Misa">
+                    </div><!--img-sobre-->
+
+                    <div class="txt-sobre">
+                        <h2>PRAZER, <span>SOU O MISA.</span></h2>
+                        <p>👨‍💻 Eu sou o Misa. Programador, viciado em café e especialista em transformar "não consigo" em "olha só que legal".</p>
+                        <p>🐛 Minha relação com bugs é igual àquele parente chato: sempre aparece na hora errada, mas a gente dá um jeito. E quando resolvo um problema difícil? Comemoro como se fosse gol na final da Copa.</p>
+                        <p>🚀 Bora fazer um site foda? Garanto bom humor, código limpo e no máximo 2 piadas ruins por projeto. Aceito pagamento em café também (mentira... ou não).</p>
+                        <div class="btn-social">
+                            <a href="https://www.instagram.com/misaelandrejezieski/?hl=pt_BR" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><button><i class="bi bi-instagram"></i></button></a>
+                            <a href="https://www.facebook.com/profile.php?id=100034358779961" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><button><i class="bi bi-facebook"></i></button></a>
+                            <a href="https://sites.google.com/view/misa-misa/home" target="_blank" rel="noopener noreferrer" aria-label="Google Sites"><button><i class="bi bi-google"></i></button></a>
+                        </div><!--btn-social-->
+                    </div><!--txt-sobre-->
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--sobre-->
+
+        <!-- ============================================================
+             ESPECIALIDADES
+             ============================================================ -->
+        <section class="especialidades" id="especialidade">
+            <div class="interface">
+                <h2 class="titulo">MINHAS <span>ESPECIALIDADES</span></h2>
+                <div class="flex">
+                    <div class="especialidades-box">
+                        <i class="bi bi-code-square"></i>
+                        <h3>Website</h3>
+                        <p>Sites que carregam mais rápido que minha paciência explicando que "não, não é só apertar um botão". Responsivo, bonito e sem gambiarra (prometo 🤞).</p>
+                    </div><!--especialidades-box-->
+
+                    <div class="especialidades-box">
+                        <i class="bi bi-cart"></i>
+                        <h3>Loja online</h3>
+                        <p>Seu e-commerce vendendo enquanto você dorme. Ou enquanto assiste Netflix. Pagamento integrado, carrinho esperto e segurança de primeira linha 🛡️.</p>
+                    </div><!--especialidades-box-->
+
+                    <div class="especialidades-box">
+                        <i class="bi bi-wordpress"></i>
+                        <h3>Blog</h3>
+                        <p>Espaço pra você escrever sobre a vida, o universo, ou porque seu gato é melhor que o da vizinha. Otimizado pro Google e fácil de editar (até sua avó consegue) 📝.</p>
+                    </div><!--especialidades-box-->
+                </div><!--flex-->
+            </div><!--interface-->
+        </section><!--especialidades-->
 
         <!-- ============================================================
              PARCEIROS
@@ -254,6 +258,10 @@
             </div>
         </div><!--interface-->
     </footer>
+
+    <button id="btn-topo" class="btn-topo" aria-label="Voltar ao topo">
+        <i class="bi bi-arrow-up"></i>
+    </button>
 
 </body>
 
