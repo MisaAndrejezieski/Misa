@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Misa — Ferramentas, projetos e sistemas que eu construí. Café, código e bom humor.">
     <meta name="author" content="Misael Andrejezieski">
+    <meta name="theme-color" content="#000000">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     
@@ -22,6 +23,51 @@
 
 <body>
 
+    <!-- ============================================================
+         LOADING SCREEN
+         ============================================================ -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">☕</div>
+            <p class="loading-text">Preparando café<span class="loading-dots">...</span></p>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         SCROLL PROGRESS
+         ============================================================ -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- ============================================================
+         CURSOR CUSTOMIZADO
+         ============================================================ -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
+
+    <!-- ============================================================
+         MENU FLUTUANTE
+         ============================================================ -->
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav class="side-menu" id="side-menu" aria-hidden="true">
+        <ul>
+            <li><a href="#topo-do-site" data-menu>🏠 Início</a></li>
+            <li><a href="#ferramentas" data-menu>🛠️ Ferramentas</a></li>
+            <li><a href="#projetos" data-menu>📁 Projetos</a></li>
+            <li><a href="#profissional" data-menu>🏢 No trabalho</a></li>
+            <li><a href="#sobre" data-menu>😎 Sobre</a></li>
+            <li><a href="#especialidade" data-menu>⚙️ Especialidades</a></li>
+            <li><a href="#parceiros" data-menu>🤝 Parceiros</a></li>
+            <li><a href="https://misaandrejezieski.github.io/infoDicas/#home" target="_blank" rel="noopener noreferrer">💡 Dicas</a></li>
+            <li><a href="#contato" data-menu>📞 Contato</a></li>
+        </ul>
+    </nav>
+    <div class="menu-overlay" id="menu-overlay"></div>
+
     <main>
         <!-- ============================================================
              HERO
@@ -30,11 +76,11 @@
             <div class="interface">
                 <div class="flex">
                     <div class="txt-topo-site">
-                        <h1>Transformo <span>café em código</span> ☕ → 💻</h1>
+                        <span class="hero-tag">// desenvolvedor front-end</span>
+                        <h1>Transformo <span class="gradient-text">café em código</span> ☕ → 💻</h1>
                         <p class="hero-descricao">
                             Ferramentas que eu construí, projetos pessoais e um sistema de produção real rodando na Lactalis.
                         </p>
-                        <p class="hero-cta">Escolhe por onde começar 👇</p>
 
                         <div class="hero-cards">
                             <a href="#ferramentas" class="hero-card">
@@ -78,24 +124,24 @@
         <!-- ============================================================
              FERRAMENTAS
              ============================================================ -->
-        <section class="ferramentas" id="ferramentas">
+        <section class="ferramentas reveal" id="ferramentas">
             <div class="interface">
                 <h2 class="titulo">MINHAS <span>FERRAMENTAS</span></h2>
                 <p class="subtitulo-secao">Coisas que eu construí pra resolver meus próprios problemas. Se serve pra você também, fica à vontade.</p>
                 <div class="flex" id="ferramentas-container">
-                    <a href="https://misaandrejezieski.github.io/NeonOn/" class="img-port" style="background-image: url('images/NeonOn.webp');" target="_blank" rel="noopener noreferrer">
+                    <a href="https://misaandrejezieski.github.io/NeonOn/" class="img-port tilt" style="background-image: url('images/NeonOn.webp');" target="_blank" rel="noopener noreferrer">
                         <div class="overlay">▶️ NeonOn · Player de pasta</div>
                     </a>
 
-                    <a href="https://fileforge-converter-online.vercel.app/" class="img-port" style="background-image: url('images/FileForge.webp');" target="_blank" rel="noopener noreferrer">
+                    <a href="https://fileforge-converter-online.vercel.app/" class="img-port tilt" style="background-image: url('images/FileForge.webp');" target="_blank" rel="noopener noreferrer">
                         <div class="overlay">🔥 FileForge · Conversor</div>
                     </a>
 
-                    <a href="https://misaandrejezieski.github.io/Site-BaixarYou/" class="img-port" style="background-image: url('images/baixaryou-banner.jpg');" target="_blank" rel="noopener noreferrer">
+                    <a href="https://misaandrejezieski.github.io/Site-BaixarYou/" class="img-port tilt" style="background-image: url('images/baixaryou-banner.jpg');" target="_blank" rel="noopener noreferrer">
                         <div class="overlay">📥 BaixarYou · Baixador de vídeos</div>
                     </a>
 
-                    <a href="https://auto-pes-v2-d3jlomtlc-misael-andrejezieskis-projects.vercel.app/" class="img-port" style="background-image: url('images/autoPes.webp');" target="_blank" rel="noopener noreferrer">
+                    <a href="https://auto-pes-v2-d3jlomtlc-misael-andrejezieskis-projects.vercel.app/" class="img-port tilt" style="background-image: url('images/autoPes.webp');" target="_blank" rel="noopener noreferrer">
                         <div class="overlay">🎯 Auto PES V2 · Automação</div>
                     </a>
                 </div>
@@ -105,19 +151,19 @@
         <!-- ============================================================
              PROJETOS PESSOAIS
              ============================================================ -->
-        <section class="portfolio" id="projetos">
+        <section class="portfolio reveal" id="projetos">
             <div class="interface">
                 <h2 class="titulo">PROJETOS <span>PESSOAIS</span></h2>
                 <div class="flex" id="projetos-container">
-                    <a href="https://misaandrejezieski.github.io/SlotMadruga/" class="img-port" style="background-image: url('images/SlotAnime.webp');" target="_blank" rel="noopener noreferrer">
+                    <a href="https://misaandrejezieski.github.io/SlotMadruga/" class="img-port tilt" style="background-image: url('images/SlotAnime.webp');" target="_blank" rel="noopener noreferrer">
                         <div class="overlay">🎰 Slot Madruga</div>
                     </a>
 
-                    <a href="https://misaandrejezieski.github.io/Copa-2026/" class="img-port" style="background-image: url('images/CopadoMundo.webp');" target="_blank" rel="noopener noreferrer">
+                    <a href="https://misaandrejezieski.github.io/Copa-2026/" class="img-port tilt" style="background-image: url('images/CopadoMundo.webp');" target="_blank" rel="noopener noreferrer">
                         <div class="overlay">⚽ Copa 2026</div>
                     </a>
 
-                    <a href="https://misaandrejezieski.github.io/TRIBB-US-Carambei/" class="img-port" style="background-image: url('images/Thribbus.webp');" target="_blank" rel="noopener noreferrer">
+                    <a href="https://misaandrejezieski.github.io/TRIBB-US-Carambei/" class="img-port tilt" style="background-image: url('images/Thribbus.webp');" target="_blank" rel="noopener noreferrer">
                         <div class="overlay">🧘 TRIBB US Carambei</div>
                     </a>
                 </div>
@@ -125,14 +171,14 @@
         </section><!--portfolio-->
 
         <!-- ============================================================
-             NO TRABALHO (destaque)
+             NO TRABALHO
              ============================================================ -->
-        <section class="profissional" id="profissional">
+        <section class="profissional reveal" id="profissional">
             <div class="interface">
                 <h2 class="titulo">NO <span>TRABALHO</span></h2>
                 <p class="subtitulo-secao">Sistema de produção real, rodando em ambiente industrial.</p>
                 <div class="flex" id="profissional-container">
-                    <a href="https://pudimflow-o5e2dnl0n-misael-andrejezieskis-projects.vercel.app/" class="img-port destaque" style="background-image: url('images/PudimFlow.webp');" target="_blank" rel="noopener noreferrer">
+                    <a href="https://pudimflow-o5e2dnl0n-misael-andrejezieskis-projects.vercel.app/" class="img-port tilt destaque" style="background-image: url('images/PudimFlow.webp');" target="_blank" rel="noopener noreferrer">
                         <div class="overlay">🍮 PudimFlow · Gestão de produção (Lactalis)</div>
                     </a>
                 </div>
@@ -142,7 +188,7 @@
         <!-- ============================================================
              SOBRE
              ============================================================ -->
-        <section class="sobre" id="sobre">
+        <section class="sobre reveal" id="sobre">
             <div class="interface">
                 <div class="flex">
                     <div class="img-sobre">
@@ -167,7 +213,7 @@
         <!-- ============================================================
              ESPECIALIDADES
              ============================================================ -->
-        <section class="especialidades" id="especialidade">
+        <section class="especialidades reveal" id="especialidade">
             <div class="interface">
                 <h2 class="titulo">MINHAS <span>ESPECIALIDADES</span></h2>
                 <div class="flex">
@@ -195,20 +241,20 @@
         <!-- ============================================================
              PARCEIROS
              ============================================================ -->
-        <section class="parceiros" id="parceiros">
+        <section class="parceiros reveal" id="parceiros">
             <div class="interface">
                 <h2 class="titulo">MEUS <span>PARCEIROS</span></h2>
                 <p class="subtitulo-secao">Marcas e comércios que confiam no meu trabalho.</p>
                 <div class="flex" id="parceiros-container">
-                    <a href="https://misaandrejezieski.github.io/Cotton-Candy-Kabukicho/" class="img-port" style="background-image: url('images/banner.png');" target="_blank" rel="noopener noreferrer">
+                    <a href="https://misaandrejezieski.github.io/Cotton-Candy-Kabukicho/" class="img-port tilt" style="background-image: url('images/banner.png');" target="_blank" rel="noopener noreferrer">
                         <div class="overlay">🌙 Cotton Candy Kabukicho</div>
                     </a>
 
-                    <a href="https://misaandrejezieski.github.io/NekoLamen/" class="img-port" style="background-image: url('images/Yakisoba\,\ japanese\ Street\ Food!!!.jpg');" target="_blank" rel="noopener noreferrer">
+                    <a href="https://misaandrejezieski.github.io/NekoLamen/" class="img-port tilt" style="background-image: url('images/Yakisoba\,\ japanese\ Street\ Food!!!.jpg');" target="_blank" rel="noopener noreferrer">
                         <div class="overlay">🍜 NEKOLAMEN · Yakisoba</div>
                     </a>
 
-                    <a href="https://misaandrejezieski.github.io/TechNova/" class="img-port" style="background-image: url('images/BannerTachNova.jpg');" target="_blank" rel="noopener noreferrer">
+                    <a href="https://misaandrejezieski.github.io/TechNova/" class="img-port tilt" style="background-image: url('images/BannerTachNova.jpg');" target="_blank" rel="noopener noreferrer">
                         <div class="overlay">✨ TechNova · Tecnologia</div>
                     </a>
                 </div>
@@ -218,7 +264,7 @@
         <!-- ============================================================
              CONTATO
              ============================================================ -->
-        <section class="formulario" id="contato">
+        <section class="formulario reveal" id="contato">
             <div class="interface">
                 <h2 class="titulo">CONTATO</h2>
 
