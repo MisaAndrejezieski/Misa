@@ -6,6 +6,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #000;
     min-height: 100vh;
@@ -55,10 +59,11 @@ form .btn-enviar input:hover {
 }
 
 /* ============================================================
-   TOPO DO SITE — HERO
+   HERO
    ============================================================ */
 section.topo-do-site {
     padding: 80px 4% 40px;
+    position: relative;
 }
 
 section.topo-do-site .flex {
@@ -84,10 +89,19 @@ section.topo-do-site .flex {
     100% { opacity: 1; text-shadow: 0 0 20px #00FF08, 0 0 30px #00FF08; }
 }
 
-.topo-do-site .txt-topo-site p {
+.hero-descricao {
+    color: #bbb;
+    margin: 25px 0 15px;
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 520px;
+}
+
+.hero-cta {
     color: #fff;
-    margin: 30px 0;
-    font-size: 17px;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 15px;
 }
 
 .topo-do-site .img-topo-site img {
@@ -106,7 +120,7 @@ section.topo-do-site .flex {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
-    margin-top: 30px;
+    margin-top: 15px;
     max-width: 480px;
 }
 
@@ -143,95 +157,23 @@ section.topo-do-site .flex {
     color: #fff;
 }
 
-/* ============================================================
-   ESPECIALIDADES
-   ============================================================ */
-section.especialidades {
-    padding: 40px 4%;
-}
-
-section.especialidades .flex {
-    gap: 60px;
-}
-
-.especialidades .especialidades-box {
-    color: #fff;
-    padding: 40px;
-    border-radius: 20px;
-    margin-top: 45px;
-    transition: .3s;
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(0, 255, 8, 0.15);
-}
-
-.especialidades .especialidades-box:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(0, 255, 8, 0.3);
-    border-color: rgba(0, 255, 8, 0.5);
-}
-
-.especialidades .especialidades-box i {
-    font-size: 70px;
+/* SCROLL HINT */
+.scroll-hint {
+    text-align: center;
+    margin-top: 40px;
     color: #00FF08;
+    font-size: 24px;
+    opacity: 0.6;
+    animation: scroll-bounce 1.8s ease-in-out infinite;
 }
 
-.especialidades .especialidades-box h3 {
-    font-size: 28px;
-    margin: 15px 0;
-}
-
-/* ============================================================
-   SOBRE
-   ============================================================ */
-section.sobre {
-    padding: 80px 4%;
-}
-
-section.sobre .flex {
-    align-items: center;
-    gap: 60px;
-}
-
-.sobre .txt-sobre {
-    color: #fff;
-}
-
-.sobre .txt-sobre h2 {
-    font-size: 40px;
-    line-height: 40px;
-    margin-bottom: 30px;
-}
-
-.sobre .txt-sobre h2 span {
-    color: #00FF08;
-    display: block;
-}
-
-.sobre .txt-sobre p {
-    margin: 20px 0;
-    text-align: justify;
-}
-
-.btn-social button {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: none;
-    background-color: #00FF08;
-    font-size: 22px;
-    cursor: pointer;
-    margin: 0 5px;
-    transition: .2s;
-}
-
-.btn-social button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px #00FF08;
+@keyframes scroll-bounce {
+    0%, 100% { transform: translateY(0); opacity: 0.6; }
+    50% { transform: translateY(10px); opacity: 1; }
 }
 
 /* ============================================================
-   SEÇÕES DE CARDS
+   SEÇÕES
    ============================================================ */
 section.ferramentas,
 section.profissional,
@@ -324,6 +266,106 @@ section.parceiros {
     opacity: 1;
 }
 
+/* PARCEIROS — cards menores */
+#parceiros-container .img-port {
+    max-width: 260px;
+    height: 300px;
+    border-radius: 25px;
+}
+
+#parceiros-container .img-port .overlay {
+    border-radius: 25px;
+    font-size: 17px;
+    padding: 15px;
+}
+
+/* ============================================================
+   ESPECIALIDADES
+   ============================================================ */
+section.especialidades {
+    padding: 40px 4%;
+}
+
+section.especialidades .flex {
+    gap: 60px;
+}
+
+.especialidades .especialidades-box {
+    color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 45px;
+    transition: .3s;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 255, 8, 0.15);
+}
+
+.especialidades .especialidades-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 255, 8, 0.3);
+    border-color: rgba(0, 255, 8, 0.5);
+}
+
+.especialidades .especialidades-box i {
+    font-size: 70px;
+    color: #00FF08;
+}
+
+.especialidades .especialidades-box h3 {
+    font-size: 28px;
+    margin: 15px 0;
+}
+
+/* ============================================================
+   SOBRE
+   ============================================================ */
+section.sobre {
+    padding: 80px 4%;
+}
+
+section.sobre .flex {
+    align-items: center;
+    gap: 60px;
+}
+
+.sobre .txt-sobre {
+    color: #fff;
+}
+
+.sobre .txt-sobre h2 {
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 30px;
+}
+
+.sobre .txt-sobre h2 span {
+    color: #00FF08;
+    display: block;
+}
+
+.sobre .txt-sobre p {
+    margin: 20px 0;
+    text-align: justify;
+}
+
+.btn-social button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: #00FF08;
+    font-size: 22px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: .2s;
+}
+
+.btn-social button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #00FF08;
+}
+
 /* ============================================================
    FORMULÁRIO
    ============================================================ */
@@ -409,6 +451,41 @@ footer .line-footer p a {
 }
 
 /* ============================================================
+   BOTÃO VOLTAR AO TOPO
+   ============================================================ */
+.btn-topo {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #00FF08;
+    color: #000;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+    z-index: 999;
+    box-shadow: 0 0 20px rgba(0, 255, 8, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-topo.visivel {
+    opacity: 1;
+    visibility: visible;
+}
+
+.btn-topo:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 255, 8, 0.8);
+}
+
+/* ============================================================
    RESPONSIVIDADE
    ============================================================ */
 @media screen and (max-width: 1020px) {
@@ -485,10 +562,14 @@ footer .line-footer p a {
     }
     
     #ferramentas-container .img-port,
-    #projetos-container .img-port,
-    #parceiros-container .img-port {
+    #projetos-container .img-port {
         height: 320px;
         max-width: 320px;
+    }
+
+    #parceiros-container .img-port {
+        max-width: 220px;
+        height: 260px;
     }
 
     #profissional-container .img-port.destaque {
@@ -517,10 +598,14 @@ footer .line-footer p a {
     }
     
     #ferramentas-container .img-port,
-    #projetos-container .img-port,
-    #parceiros-container .img-port {
+    #projetos-container .img-port {
         max-width: 100%;
         height: 280px;
+    }
+
+    #parceiros-container .img-port {
+        max-width: 100%;
+        height: 260px;
     }
 
     #profissional-container .img-port.destaque {
@@ -538,6 +623,10 @@ footer .line-footer p a {
     .topo-do-site h1 {
         font-size: 26px;
         line-height: 35px;
+    }
+
+    .hero-descricao {
+        font-size: 15px;
     }
 
     h2.titulo {
@@ -571,20 +660,23 @@ footer .line-footer p a {
     footer .line-footer p {
         font-size: 14px;
     }
+
+    .btn-topo {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
 }
 
 @media screen and (max-width: 400px) {
     #ferramentas-container .img-port,
-    #projetos-container .img-port,
-    #parceiros-container .img-port {
+    #projetos-container .img-port {
         height: 220px;
     }
 
-    #ferramentas-container .img-port .overlay,
-    #projetos-container .img-port .overlay,
-    #parceiros-container .img-port .overlay {
-        font-size: 16px;
-        padding: 10px;
+    #parceiros-container .img-port {
+        height: 200px;
     }
 
     .topo-do-site h1 {
