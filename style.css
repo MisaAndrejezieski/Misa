@@ -177,7 +177,7 @@ section.especialidades .flex {
 }
 
 .especialidades .especialidades-box h3 {
-    font-size: 28px;
+    font-size: 24px;
     margin: 15px 0;
 }
 
@@ -231,20 +231,101 @@ section.sobre .flex {
 }
 
 /* ============================================================
-   SEÇÕES DE CARDS
+   NOVA SEÇÃO: SISTEMAS & ENGENHARIA (Cards de Destaque)
    ============================================================ */
-section.ferramentas,
-section.profissional,
-section.portfolio,
-section.parceiros {
+section.sistemas {
     padding: 80px 4%;
     box-shadow: 0 0 40px 10px #ffffff1d;
 }
 
+.container-destaque {
+    display: flex;
+    gap: 30px;
+    margin-top: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card-destaque {
+    display: flex;
+    flex-direction: row;
+    background: #111;
+    border: 1px solid rgba(0, 255, 8, 0.2);
+    border-radius: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    width: 100%;
+    max-width: 600px;
+    transition: .4s;
+    color: #fff;
+}
+
+.card-destaque:hover {
+    border-color: #00FF08;
+    box-shadow: 0 0 30px rgba(0, 255, 8, 0.15);
+    transform: translateY(-5px);
+}
+
+.card-destaque .card-img {
+    width: 45%;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-destaque .card-info {
+    padding: 30px;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-destaque .badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    color: #00FF08;
+    background: rgba(0, 255, 8, 0.1);
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    align-self: flex-start;
+}
+
+.card-destaque h3 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.card-destaque p {
+    font-size: 14px;
+    color: #aaa;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.card-destaque .btn-ver {
+    font-size: 13px;
+    color: #00FF08;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* ============================================================
+   SEÇÕES DE CARDS (WEB APPS / FERRAMENTAS / UI)
+   ============================================================ */
+section.web-apps,
+section.ferramentas,
+section.portfolio {
+    padding: 80px 4%;
+    box-shadow: 0 0 40px 10px #ffffff1d;
+}
+
+#web-apps-container,
 #ferramentas-container,
-#projetos-container,
-#parceiros-container,
-#profissional-container {
+#projetos-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
@@ -254,14 +335,9 @@ section.parceiros {
     justify-content: center;
 }
 
-#profissional-container {
-    grid-template-columns: 1fr;
-}
-
+#web-apps-container .img-port,
 #ferramentas-container .img-port,
-#projetos-container .img-port,
-#parceiros-container .img-port,
-#profissional-container .img-port {
+#projetos-container .img-port {
     width: 100%;
     max-width: 360px;
     height: 420px;
@@ -278,33 +354,29 @@ section.parceiros {
     color: inherit;
 }
 
-#profissional-container .img-port.destaque {
-    max-width: 500px;
-    height: 480px;
+#web-apps-container .img-port.destaque {
     border: 2px solid rgba(0, 255, 8, 0.35);
     box-shadow: 0 0 40px rgba(0, 255, 8, 0.2);
 }
 
+#web-apps-container .img-port:hover,
 #ferramentas-container .img-port:hover,
-#projetos-container .img-port:hover,
-#parceiros-container .img-port:hover,
-#profissional-container .img-port:hover {
+#projetos-container .img-port:hover {
     background-position: 100% 100%;
     border-color: rgba(0, 255, 8, 0.5);
     box-shadow: 0 0 30px rgba(0, 255, 8, 0.25);
 }
 
+#web-apps-container .img-port .overlay,
 #ferramentas-container .img-port .overlay,
-#projetos-container .img-port .overlay,
-#parceiros-container .img-port .overlay,
-#profissional-container .img-port .overlay {
+#projetos-container .img-port .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.75);
-    border-radius: 40px;
+    border-radius: 38px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -317,10 +389,9 @@ section.parceiros {
     transition: 0.5s;
 }
 
+#web-apps-container .img-port .overlay:hover,
 #ferramentas-container .img-port .overlay:hover,
-#projetos-container .img-port .overlay:hover,
-#parceiros-container .img-port .overlay:hover,
-#profissional-container .img-port .overlay:hover {
+#projetos-container .img-port .overlay:hover {
     opacity: 1;
 }
 
@@ -469,31 +540,41 @@ footer .line-footer p a {
         width: 100%;
     }
 
+    section.sistemas,
+    section.web-apps,
     section.ferramentas,
-    section.profissional,
-    section.portfolio,
-    section.parceiros {
+    section.portfolio {
         padding: 80px 8%;
     }
 
+    .card-destaque {
+        flex-direction: column;
+        max-width: 400px;
+    }
+
+    .card-destaque .card-img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .card-destaque .card-info {
+        width: 100%;
+        padding: 20px;
+    }
+
+    #web-apps-container,
     #ferramentas-container,
-    #projetos-container,
-    #parceiros-container {
+    #projetos-container {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 25px;
         justify-items: center;
     }
     
+    #web-apps-container .img-port,
     #ferramentas-container .img-port,
-    #projetos-container .img-port,
-    #parceiros-container .img-port {
+    #projetos-container .img-port {
         height: 320px;
         max-width: 320px;
-    }
-
-    #profissional-container .img-port.destaque {
-        max-width: 100%;
-        height: 400px;
     }
 
     footer .flex {
@@ -507,30 +588,25 @@ footer .line-footer p a {
 }
 
 @media screen and (max-width: 600px) {
+    #web-apps-container,
     #ferramentas-container,
-    #projetos-container,
-    #parceiros-container {
+    #projetos-container {
         grid-template-columns: 1fr;
         gap: 25px;
         padding: 0 10px;
         justify-items: center;
     }
     
+    #web-apps-container .img-port,
     #ferramentas-container .img-port,
-    #projetos-container .img-port,
-    #parceiros-container .img-port {
+    #projetos-container .img-port {
         max-width: 100%;
         height: 280px;
     }
 
-    #profissional-container .img-port.destaque {
-        height: 300px;
-    }
-
+    #web-apps-container .img-port .overlay,
     #ferramentas-container .img-port .overlay,
-    #projetos-container .img-port .overlay,
-    #parceiros-container .img-port .overlay,
-    #profissional-container .img-port .overlay {
+    #projetos-container .img-port .overlay {
         font-size: 18px;
         padding: 15px;
     }
@@ -553,7 +629,7 @@ footer .line-footer p a {
     }
 
     .especialidades .especialidades-box h3 {
-        font-size: 22px;
+        font-size: 20px;
     }
 
     .btn-social button {
@@ -574,15 +650,15 @@ footer .line-footer p a {
 }
 
 @media screen and (max-width: 400px) {
+    #web-apps-container .img-port,
     #ferramentas-container .img-port,
-    #projetos-container .img-port,
-    #parceiros-container .img-port {
+    #projetos-container .img-port {
         height: 220px;
     }
 
+    #web-apps-container .img-port .overlay,
     #ferramentas-container .img-port .overlay,
-    #projetos-container .img-port .overlay,
-    #parceiros-container .img-port .overlay {
+    #projetos-container .img-port .overlay {
         font-size: 16px;
         padding: 10px;
     }
