@@ -9,17 +9,13 @@
 body {
     background-color: #000;
     min-height: 100vh;
-}
-
-.parisienne-regular {
-    font-family: "Parisienne", cursive;
-    font-weight: 400;
-    font-style: normal;
+    overflow-x: hidden; /* Impede rolagem lateral indesejada */
 }
 
 .interface {
     max-width: 1280px;
     margin: 0 auto;
+    padding: 0 20px; /* Garante respiro nas laterais no mobile */
 }
 
 .flex {
@@ -94,6 +90,7 @@ section.topo-do-site .flex {
     position: relative;
     animation: flutuar 2s ease-in-out infinite alternate;
     max-width: 100%;
+    height: auto;
 }
 
 @keyframes flutuar {
@@ -144,21 +141,20 @@ section.topo-do-site .flex {
 }
 
 /* ============================================================
-   ESPECIALIDADES
+   ESPECIALIDADES E SOBRE
    ============================================================ */
 section.especialidades {
     padding: 40px 4%;
 }
 
 section.especialidades .flex {
-    gap: 60px;
+    gap: 30px;
 }
 
 .especialidades .especialidades-box {
     color: #fff;
     padding: 40px;
     border-radius: 20px;
-    margin-top: 45px;
     transition: .3s;
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(5px);
@@ -181,9 +177,6 @@ section.especialidades .flex {
     margin: 15px 0;
 }
 
-/* ============================================================
-   SOBRE
-   ============================================================ */
 section.sobre {
     padding: 80px 4%;
 }
@@ -211,6 +204,10 @@ section.sobre .flex {
 .sobre .txt-sobre p {
     margin: 20px 0;
     text-align: justify;
+}
+
+.btn-social {
+    margin-top: 20px;
 }
 
 .btn-social button {
@@ -270,6 +267,8 @@ section.sistemas {
     width: 45%;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    min-height: 250px;
 }
 
 .card-destaque .card-info {
@@ -332,7 +331,6 @@ section.portfolio {
     justify-items: center;
     align-items: center;
     margin-top: 60px;
-    justify-content: center;
 }
 
 #web-apps-container .img-port,
@@ -348,7 +346,6 @@ section.portfolio {
     border-radius: 40px;
     position: relative;
     border: 2px solid rgba(0, 255, 8, 0.1);
-    margin: 0 auto;
     display: block;
     text-decoration: none;
     color: inherit;
@@ -396,7 +393,7 @@ section.portfolio {
 }
 
 /* ============================================================
-   FORMULÁRIO
+   FORMULÁRIO E RODAPÉ
    ============================================================ */
 section.formulario {
     padding: 80px 4%;
@@ -406,7 +403,6 @@ form {
     max-width: 500px;
     margin: 0 auto;
     display: flex;
-    justify-content: center;
     flex-direction: column;
     gap: 10px;
     margin-top: 40px;
@@ -450,9 +446,6 @@ form .btn-enviar input {
     transition: .2s;
 }
 
-/* ============================================================
-   RODAPÉ
-   ============================================================ */
 footer {
     padding: 40px 4%;
     box-shadow: 0 0 40px 10px #ffffff1d;
@@ -460,6 +453,7 @@ footer {
 
 footer .flex {
     justify-content: space-between;
+    align-items: center;
 }
 
 footer .line-footer {
@@ -468,6 +462,7 @@ footer .line-footer {
 
 .borda {
     border-top: 2px solid #00FF08;
+    margin-top: 20px;
 }
 
 footer .line-footer p i {
@@ -477,10 +472,11 @@ footer .line-footer p i {
 
 footer .line-footer p a {
     color: #fff;
+    text-decoration: none;
 }
 
 /* ============================================================
-   RESPONSIVIDADE
+   RESPONSIVIDADE (Ajustada para evitar quebra)
    ============================================================ */
 @media screen and (max-width: 1020px) {
     .flex {
@@ -491,31 +487,23 @@ footer .line-footer p a {
         flex-direction: column-reverse;
     }
 
+    section.topo-do-site {
+        padding: 40px 8%;
+        text-align: center;
+    }
+
+    .hero-cards {
+        margin: 30px auto 0 auto;
+    }
+
     h2.titulo {
         font-size: 34px;
         line-height: 40px;
     }
 
-    section.topo-do-site .flex {
-        gap: 40px;
-    }
-
-    section.topo-do-site {
-        padding: 40px 8%;
-    }
-
     .topo-do-site h1 {
-        font-size: 30px;
-        line-height: 40px;
-    }
-
-    .topo-do-site .img-topo-site img {
-        width: 100%;
-    }
-
-    .hero-cards {
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 100%;
+        font-size: 32px;
+        line-height: 42px;
     }
 
     section.especialidades {
@@ -538,23 +526,26 @@ footer .line-footer p a {
 
     .img-sobre img {
         width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        display: block;
     }
 
     section.sistemas,
     section.web-apps,
     section.ferramentas,
     section.portfolio {
-        padding: 80px 8%;
+        padding: 60px 8%;
     }
 
     .card-destaque {
         flex-direction: column;
-        max-width: 400px;
+        max-width: 100%;
     }
 
     .card-destaque .card-img {
         width: 100%;
-        height: 200px;
+        height: 250px;
     }
 
     .card-destaque .card-info {
@@ -567,34 +558,32 @@ footer .line-footer p a {
     #projetos-container {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 25px;
-        justify-items: center;
     }
     
     #web-apps-container .img-port,
     #ferramentas-container .img-port,
     #projetos-container .img-port {
         height: 320px;
-        max-width: 320px;
+        max-width: 100%;
     }
 
     footer .flex {
         flex-direction: column;
         gap: 30px;
-    }
-
-    footer .line-footer {
         text-align: center;
     }
 }
 
 @media screen and (max-width: 600px) {
+    .hero-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     #web-apps-container,
     #ferramentas-container,
     #projetos-container {
         grid-template-columns: 1fr;
         gap: 25px;
-        padding: 0 10px;
-        justify-items: center;
     }
     
     #web-apps-container .img-port,
@@ -602,13 +591,6 @@ footer .line-footer p a {
     #projetos-container .img-port {
         max-width: 100%;
         height: 280px;
-    }
-
-    #web-apps-container .img-port .overlay,
-    #ferramentas-container .img-port .overlay,
-    #projetos-container .img-port .overlay {
-        font-size: 18px;
-        padding: 15px;
     }
 
     .topo-do-site h1 {
@@ -642,33 +624,5 @@ footer .line-footer p a {
     form textarea {
         font-size: 16px;
         padding: 15px 12px;
-    }
-
-    footer .line-footer p {
-        font-size: 14px;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    #web-apps-container .img-port,
-    #ferramentas-container .img-port,
-    #projetos-container .img-port {
-        height: 220px;
-    }
-
-    #web-apps-container .img-port .overlay,
-    #ferramentas-container .img-port .overlay,
-    #projetos-container .img-port .overlay {
-        font-size: 16px;
-        padding: 10px;
-    }
-
-    .topo-do-site h1 {
-        font-size: 22px;
-        line-height: 30px;
-    }
-
-    h2.titulo {
-        font-size: 24px;
     }
 }
